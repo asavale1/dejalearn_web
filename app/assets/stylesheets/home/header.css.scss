@@ -1,0 +1,24 @@
+#home-header{
+	background-color: #03b5f5;
+	height: 60px;
+
+	img{
+		width: 40px;
+		float: left;
+	}
+
+	.outer-table{
+		width: 97%;
+		margin-left: 3%;
+
+		.outer-td{
+			width: 25%;
+		}
+
+		.inner-table{
+			.text{
+				padding-left: 10px;
+			}
+		}
+	}
+}

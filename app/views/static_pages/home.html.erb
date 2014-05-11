@@ -2,12 +2,31 @@
 <%= stylesheet_link_tag "home" %>
 <%= javascript_include_tag "home" %>
 
-<h1>Home</h1>
 <div id="main" class="main mbig">
 	<div class="scroll" id="home" >
-		<h2>Home</h2>	
+		<div id = "home-wrap">
+			<%= image_tag "home/hero_image.jpg" %>
+			<div id="app-form">
+				<form id="subscribe">
+					<h4>Want the app?</h4>
+					<div id="name">
+						<input class="input input-field" type="text" name="name" placeholder="Your Name"/>
+					</div>
+					<div id="email">
+						<input class="input input-field" type="text" name="email" placeholder="Your Email" />
+					</div>
+					<input id="submit" class="input" type="submit" value="Let me know when it's ready" />
+				</form>
+			</div>
+		</div>	
 	</div>
 	<div class="scroll" id="mission">
 		<h2> Mission </h2>
+	</div>
+	<div class="scroll" id="packet">
+		<h2>Packet</h2>
+	</div>
+	<div class="scroll" id="about">
+		<h2>About</h2>
 	</div>
 </div>

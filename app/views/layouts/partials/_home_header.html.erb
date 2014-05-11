@@ -1,12 +1,48 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header id="home-header" class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "Dejalearn", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home",    '#' %></li>
-        </ul>
-      </nav>
-    </div>
+    <table class="table table-condensed outer-table">
+      <tr>
+        <td>
+            <table>
+              <tr>
+                <td>
+                  <%= link_to image_tag("home/nav/home.png"), "#" %>
+                <td>
+                <td>
+                  <h4>Home</h4>
+                </td>
+              </tr>
+            </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td>
+                <%= link_to image_tag("home/nav/mission.png"), "#" %>
+              </td>
+              <td>
+                <h4>Mission</h4>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td>
+                <%= link_to image_tag("home/nav/content.png"), "#" %>
+              </td>
+              <td>
+                <h4>Packet Creation</h4>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <%= link_to image_tag("home/nav/about.png"), "#" %>
+          <h4>About Us</h4>
+        </td>
+      </tr>
+    </table>
   </div>
 </header>

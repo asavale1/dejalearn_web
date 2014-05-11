@@ -3,6 +3,7 @@ $(document).ready(function(){
         	sectionContainer: "div.scroll",
         	easing: "ease",
         	responsiveFallback: 600,
-        	loop: true
+        	loop: true,
+        	pagination: false,
       	});
 });

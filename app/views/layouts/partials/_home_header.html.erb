@@ -1,46 +1,54 @@
 <header id="home-header" class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
-    <table class="table table-condensed outer-table">
+    <table class="table-condensed outer-table">
       <tr>
-        <td>
-            <table>
+        <td class="outer-td">
+            <table class="inner-table">
               <tr>
-                <td>
+                <td class="image">
                   <%= link_to image_tag("home/nav/home.png"), "#" %>
-                <td>
-                <td>
+                </td>
+                <td class="text">
                   <h4>Home</h4>
                 </td>
               </tr>
             </table>
         </td>
-        <td>
-          <table>
+        <td class="outer-td">
+          <table class="inner-table">
             <tr>
-              <td>
+              <td class="image">
                 <%= link_to image_tag("home/nav/mission.png"), "#" %>
               </td>
-              <td>
+              <td class="text">
                 <h4>Mission</h4>
               </td>
             </tr>
           </table>
         </td>
-        <td>
-          <table>
+        <td class="outer-td">
+          <table class="inner-table">
             <tr>
-              <td>
+              <td class="image">
                 <%= link_to image_tag("home/nav/content.png"), "#" %>
               </td>
-              <td>
+              <td class="text">
                 <h4>Packet Creation</h4>
               </td>
             </tr>
           </table>
         </td>
-        <td>
-          <%= link_to image_tag("home/nav/about.png"), "#" %>
-          <h4>About Us</h4>
+        <td class="outer-td">
+          <table class="inner-table">
+            <tr>
+              <td class="image">
+                <%= link_to image_tag("home/nav/about.png"), "#" %>
+              </td>
+              <td class="text">
+                <h4>About Us</h4>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     </table>

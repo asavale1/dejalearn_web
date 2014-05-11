@@ -8,9 +8,17 @@
 	}
 
 	.outer-table{
+		width: 97%;
 		margin-left: 3%;
-		td{
+
+		.outer-td{
 			width: 25%;
+		}
+
+		.inner-table{
+			.text{
+				padding-left: 10px;
+			}
 		}
 	}
 }

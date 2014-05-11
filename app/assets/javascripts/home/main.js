@@ -7,3 +7,8 @@ $(document).ready(function(){
         	pagination: false,
       	});
 });
+
+function scroll(index){
+	console.log(index);
+	$(".main").moveTo(index);
+}

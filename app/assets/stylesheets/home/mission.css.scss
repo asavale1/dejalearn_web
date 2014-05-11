@@ -1,0 +1,54 @@
+#mission{
+	
+	#mission-wrap{
+		height: 100%;
+		width: 97%;
+		margin-left: 1.5%;
+		background-color: #fff;
+		padding-top: 50px;
+
+		#mission-table{
+			td{
+				width: 25%;
+				text-align: center;
+
+				img{
+					width: 239px;
+				}
+			}
+		}
+	}
+
+	#home_model{
+		-webkit-transform: translate3d(-150%, 0, 0);
+		-moz-transform: translate3d(-150%, 0, 0);
+		transform: translate3d(-150%, 0, 0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+
+	#quiz_model{
+		-webkit-transform: translate3d(150%, 0, 0);
+		-moz-transform: translate3d(150%, 0, 0);
+		transform: translate3d(150%, 0, 0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+}
+
+#mission.active{
+	#home_model, #quiz_model{
+		-webkit-transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+}
+

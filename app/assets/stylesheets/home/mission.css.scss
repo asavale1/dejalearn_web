@@ -1,10 +1,10 @@
 #mission{
 	
 	#mission-wrap{
+		background-color: #bce6f5;
 		height: 100%;
 		width: 97%;
 		margin-left: 1.5%;
-		background-color: #fff;
 		padding-top: 50px;
 
 		#mission-table{
@@ -15,7 +15,51 @@
 				img{
 					width: 239px;
 				}
+
+				.text{
+					border-radius: 10px;
+					padding: 10px;
+					float: left;
+					z-index: 20;
+				}
+
+				.text.left{
+					transform:rotate(5deg) translate3d(-5%, -110%, 0);
+					-ms-transform:rotate(5deg) translate3d(-5%, -110%, 0);
+					-webkit-transform:rotate(5deg) translate3d(-5%, -110%, 0);
+				}
+
+				.text.right{
+					-webkit-transform: rotate(-7deg) translate3d(10%, -110%, 0);
+					-moz-transform: rotate(-7deg) translate3d(10%, -110%, 0);
+					transform: rotate(-7deg) translate3d(10%, -110%, 0);
+				}
+
+				.text-bg{
+					z-index: 10;
+					float: right;
+					width: 300px;
+					-webkit-transform: translate3d(0, 20%, 0);
+					-moz-transform: translate3d(0, 20%, 0);
+					transform: translate3d(0, 20%, 0);
+				}
 			}
+
+			#problem-text{
+				padding-right: 10px;
+			}
+
+			#solution-text{
+				padding-left: 10px;
+			}
+		}
+
+		#mission-main-table{
+			td{
+				vertical-align: top;
+			}
+			margin-left: 3%;
+			margin-right: 3%;
 		}
 	}
 

@@ -22,32 +22,38 @@
 	</div>
 	<div class="scroll" id="mission">
 		<div id="mission-wrap">
-  			<table>
+  			<table id="mission-main-table">
 				<tr>
 					<td>
 						<h1>Our Mission</h1>
 					</td>
 					<td>
-						<p>
+						<h3>
 							At DejaLearn, we strive to maximize the overall learning potential by changing the way the modern student learns,one packet at a time. Our strategy aims to reduce anxiety, improve test scores, and foster a learning evironment that is conducive to long term retention of information learned in the classroom.
-						</p>
+						</h3>
 					</td>
 				</tr>
 			</table>
 			<table id="mission-table">
 	  			<tr>
-	  				<td>
+	  				<td class="image">
 	  					<%= image_tag "home/model/home_model.png", id: "home_model"%>
 	  				</td>
-	  				<td>
-	  					<h1>Problem</h1>
-	  					<h3>Memorization is a very dry process, and many prefer to put it off until the very last moment. Often times we find ourselves scrabbling to cram information in a short span of time.</h3>
+	  				<td id="problem-text">
+	  					<%= image_tag "home/notepad_left.png", class: "text-bg" %>
+	  					<div class="text left">
+	  						<h2>The Problem</h2>
+	  						<h4>Memorization is a very dry process, and many prefer to put it off until the very last moment. Often times we find ourselves scrabbling to cram information in a short span of time.</h4>
+	  					</div>
 	  				</td>
-	  				<td>
-	  					<h1>Solution</h1>
-	  					<h3>Dejalearn...with a schedule which adapts to your needs you will grasp even the most difficult concepts, and repetition ceases to be dr, a couple seconds is all it takes to answer a question.</h3>
+	  				<td id="solution-text">
+	  					<%= image_tag "home/notepad_right.png", class: "text-bg" %>
+	  					<div class="text right">
+	  						<h2>The Solution</h2>
+	  						<h4>Dejalearn...with a schedule which adapts to your needs memorization becomes a breeze, and repetition ceases to be dry, a couple seconds is all it takes to answer a question.</h4>
+	  					</div>
 	  				</td>
-	  				<td>
+	  				<td class="image">
 	  					<%= image_tag "home/model/quiz_model.png", id: "quiz_model" %>
 	  				</td>
 	  			</tr>

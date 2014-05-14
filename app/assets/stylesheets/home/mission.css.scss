@@ -55,12 +55,22 @@
 		}
 
 		#mission-main-table{
+			position: fixed;
 			td{
+				z-index: 20;
 				vertical-align: top;
 			}
 			margin-left: 3%;
 			margin-right: 3%;
 		}
+
+		#paper-bg{
+			width: 100%;
+			height: 140px;
+			z-index: 10;
+			float: left;
+		}
+		
 	}
 
 	#home_model{

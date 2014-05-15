@@ -1,0 +1,84 @@
+#packet{
+	#packet-wrap{
+		height: 100%;
+		width: 97%;
+		margin-left: 1.5%;
+		background-color: #fff;
+		padding-top: 50px;
+
+		#packet-table-outer{
+			height: 100%;
+			td{
+				#packet-table-inner{
+					height: 100%;
+				}
+
+				img{
+					width: 200px;
+				}
+			}
+		}
+	}
+
+	#add-model{
+		-webkit-transform: translate3d(-102%, 0, 0);
+		-moz-transform: translate3d(-102%, 0, 0);
+		transform: translate3d(-102%, 0, 0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+
+	#exercise-model{
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);	
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+
+	#select-model{
+		-webkit-transform: translate3d(102%, 0, 0);
+		-moz-transform: translate3d(102%, 0, 0);
+		transform: translate3d(102%, 0, 0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+}
+
+#packet.active{
+	#add-model{
+		-webkit-transform: translate3d(-50%, 30%, 0);
+		-moz-transform: translate3d(-50%, 30%, 0);
+		transform: translate3d(-50%, 30%, 0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+
+	#exercise-model{
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+
+	#select-model{
+		-webkit-transform: translate3d(130%, -30%, 0);
+		-moz-transform: translate3d(130%, -30%, 0);
+		transform: translate3d(130%, -30%, 0);
+
+		-webkit-transition: -webkit-transform 500ms ease-out 1s;
+		-moz-transition: -moz-transform 500ms ease-out 1s;
+		transition: transform 500ms ease-out 1s;
+	}
+}

@@ -69,16 +69,17 @@
 						<table id="packet-table-inner">
 							<tr>
 								<td>
-
-								</td>
-								<td>
-									<h2>What is packet creation</h2>
+									<button id="blue-tab">
+										<h2 class="text-title"> What is packet creation?</h2>
+									</button>
+									<div id="effect" class="ui-widget-content">
+										<p>
+										Packet Info
+										</p>
+									</div>
 								</td>
 							</tr>
 							<tr>
-								<td>
-
-								</td>
 								<td>
 									<h2>Make money</h2>
 
@@ -86,18 +87,16 @@
 							</tr>
 							<tr>
 								<td>
-
-								</td>
-								<td>
 									<h2>Create a packet</h2>
 								</td>
 							</tr>
 						</table>
+
 					</td>
 					<td>
-						<%= image_tag "home/model/select_model.png", id: "select-model" %>
-						<%= image_tag "home/model/exercise_model.png", id: "exercise-model" %>
-						<%= image_tag "home/model/add_packet_model.png", id: "add-model" %>
+						<%= image_tag "home/model/select_model.png", id: "select-model", class: "model" %>
+						<%= image_tag "home/model/exercise_model.png", id: "exercise-model", class: "model" %> 
+						<%= image_tag "home/model/add_packet_model.png", id: "add-model", class: "model" %>
 					</td>
 				</tr>
 			</table>
@@ -107,3 +106,34 @@
 		<h2>About</h2>
 	</div>
 </div>
+
+ <script>
+	$(function() {
+		// run the currently selected effect
+		function showEffect() {
+			// run the effect
+			var options = {}
+			$( "#effect" ).show( "blind", 1000 );
+		};
+
+		function hideEffect(){
+			$('#effect').hide("blind", 1000);
+		}
+
+		var show = true;
+		// set effect from select menu value
+		$( "#blue-tab" ).click(function() {
+			if(show){
+				showEffect();
+				show = false;
+				return false;	
+			}else{
+				hideEffect();
+				show = true;
+				return false;
+			}
+			
+		});
+		$( "#effect" ).hide();
+	});
+</script>

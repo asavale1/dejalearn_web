@@ -11,9 +11,39 @@
 			td{
 				#packet-table-inner{
 					height: 100%;
+
+					.text-title{
+						padding-right: 40px;
+						padding-left: 40px;
+						padding-top: 5px;
+						padding-bottom: 5px;
+
+						margin: -3px;
+					}
+
+					#effect{
+						border: 0;
+						min-height: 100px;
+						text-align: center;
+						margin: 0px;
+						padding: 0em; 
+						position: relative;
+
+						background-image: image-url('home/design/blue-back.png');
+						background-size: 100% 100%;
+						background-repeat: no-repeat;
+					}
+					#blue-tab{
+						border: none;
+
+						background-image: image-url('home/design/blue-tab.png');
+						background-size: 100% 100%;
+						background-repeat: no-repeat;
+					}
+					
 				}
 
-				img{
+				.model{
 					width: 200px;
 				}
 			}

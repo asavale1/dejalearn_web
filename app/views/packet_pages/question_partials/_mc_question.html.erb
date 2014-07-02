@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "dashboard/questions/mc_layout" %>
+<div class="question-base">
+	<h3 class="question-title">Exercise</h3>
+	<table>
+		<tr>
+			<td>
+				<%= text_field_tag("question", nil, placeholder: "Enter the question", class: "question-text") %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= text_field_tag("hint", nil, placeholder: "Enter a hint", class: "question-hint") %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= text_field_tag("optionA", nil, placeholder: "Option A", class: "question-option") %>
+				<%= radio_button_tag("option-#{@index}", "a") %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= text_field_tag("optionB", nil, placeholder: "Option B", class: "question-option") %>
+				<%= radio_button_tag("option-#{@index}", "b") %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= text_field_tag("optionC", nil, placeholder: "Option C", class: "question-option") %>
+				<%= radio_button_tag("option-#{@index}", "c") %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= text_field_tag("optionD", nil, placeholder: "Option D", class: "question-option") %>
+				<%= radio_button_tag("option-#{@index}", "d") %>
+			</td>
+		</tr>
+	</table>
+</div>

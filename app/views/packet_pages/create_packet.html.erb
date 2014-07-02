@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "dashboard/create_packet" %>
+<%= javascript_include_tag "dashboard/create_packet" %>
+
+<div id="top-banner">
+	<%= image_tag "dashboard/logo.png", id: "logo" %>
+</div>
+<div id="horizontal-bar"></div>
+
+<table id="main-table">
+	<tr>
+		<td id="questions">
+			<div id="question-form">
+				<%= render partial: "packet_pages/question_partials/mc_question" %>
+			</div>
+
+			<div id="question-type">
+				<%= select_tag("type", options_for_select(["Add Question", "Multiple Choice", "Image Multiple Choice", "Fill in the Blank"]), onchange: "createQuestion()") %>
+			</div>
+
+		</td>
+		<td id="vertical-bar">
+		</td>
+		<td id="options">
+			options
+		</td>
+	</tr>
+</table>

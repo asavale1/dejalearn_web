@@ -1,5 +1,9 @@
 Dejalearn::Application.routes.draw do
   root 'static_pages#home'
+  match '/dashboard', to: 'packet_pages#dashboard', via: 'get'
+  match '/dashboard/create', to: 'packet_pages#create_packet', via: 'get'
+  match '/dashboard/render_question', to: 'packet_pages#render_question', via: 'get'
+
   #get 'static_pages/home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

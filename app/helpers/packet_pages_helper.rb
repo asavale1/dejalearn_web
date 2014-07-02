@@ -1,0 +1,3 @@
+module PacketPagesHelper
+
+end

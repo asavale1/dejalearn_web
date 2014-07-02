@@ -1,0 +1,70 @@
+.question-base{
+	width: 75%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+
+	padding: 20px;
+
+	box-shadow: 0 0 5px 5px #000;
+	-moz-box-shadow: 0 0 5px 5px #000;
+	-webkit-box-shadow: 0 0 5px 5px #000;
+
+	border-radius: 5px;
+
+	table{
+		width: 100%;
+		text-align: left;
+		td{
+			padding-top: 2px;
+			padding-bottom: 5px;
+
+			.question-text{
+				width: 60%;
+				height: 40px;
+				border: none;
+				border-radius: 5px;
+				font-size: 20px;
+				padding-left: 10px;
+			}
+
+			.question-hint{
+				width: 60%;
+				height: 40px;
+				border: none;
+				border-radius: 5px;
+				font-size: 20px;
+				padding-left: 10px;
+			}
+
+			.question-option{
+				width: 30%;
+				height: 40px;
+				border: none;
+				border-radius: 5px;
+				font-size: 20px;
+				padding-left: 10px;
+			}
+		}
+	}
+
+	::-webkit-input-placeholder {
+		color: white;
+		font-size: 20px;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+		color: white;
+		font-size: 20px;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: white;  
+		font-size: 20px;
+	}
+
+	:-ms-input-placeholder {  
+		color: white;  
+		font-size: 20px;
+	}
+}

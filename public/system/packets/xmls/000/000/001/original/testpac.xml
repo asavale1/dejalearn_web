@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet>
+  <exercise>
+    <id>1</id>
+    <type>MC</type>
+    <question>quest</question>
+    <answer/>
+    <hint>hin</hint>
+    <choices>
+      <choiceA>csodc</choiceA>
+      <choiceB>csdcs</choiceB>
+      <choiceC>cscds</choiceC>
+      <choiceD>asda</choiceD>
+    </choices>
+  </exercise>
+</packet>

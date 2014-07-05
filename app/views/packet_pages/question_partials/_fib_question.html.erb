@@ -1,0 +1,31 @@
+<div class="fib-base" id="question-id-<%= @index %>">
+	<table class="fib-title-table">
+		<tr>
+			<td>
+				<h3 class="fib-title">Image Fill in the Blank</h3>
+			</td>
+			<td>
+				<%= button_tag image_tag("dashboard/trash.png"), class: "delete", onclick: "deleteQuestion(#{@index})" %>
+			</td>
+		</tr>
+	</table>
+	
+	<table class="fib-table">
+		<%= hidden_field_tag "type-#{@index}", "FIB" %>
+		<tr>
+			<td>
+				<%= text_field_tag("question-#{@index}", nil, placeholder: "Enter the question", class: "fib-question", onkeyup: "verifyQuestion(#{@index})") %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= text_field_tag("answer-#{@index}", nil, placeholder: "Enter the answer", class: "fib-answer", onkeyup: "verifyAnswer(#{@index})") %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= text_field_tag("hint-#{@index}", nil, placeholder: "Enter a hint (optional)", class: "fib-hint") %>
+			</td>
+		</tr>
+	</table>
+</div>

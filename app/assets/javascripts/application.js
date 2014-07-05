@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree ./global
+//= require jquery9
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-fileupload
+//= require_tree ./global
+

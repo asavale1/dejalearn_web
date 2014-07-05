@@ -1,4 +1,4 @@
-.mc-base{
+.fib-base{
 	width: 75%;
 	margin-top: 20px;
 	margin-left: auto;
@@ -12,7 +12,7 @@
 
 	border-radius: 5px;
 
-	.mc-title-table{
+	.fib-title-table{
 		width: 100%;
 
 		td{
@@ -24,16 +24,15 @@
 			}
 		}
 	}
-	
 
-	.mc-table{
+	.fib-table{
 		width: 100%;
 		text-align: left;
 		td{
 			padding-top: 2px;
 			padding-bottom: 5px;
 
-			.mc-text{
+			.fib-question{
 				width: 60%;
 				height: 40px;
 				border: none;
@@ -42,7 +41,7 @@
 				padding-left: 10px;
 			}
 
-			.mc-hint{
+			.fib-hint{
 				width: 60%;
 				height: 40px;
 				border: none;
@@ -51,8 +50,8 @@
 				padding-left: 10px;
 			}
 
-			.mc-option{
-				width: 30%;
+			.fib-answer{
+				width: 60%;
 				height: 40px;
 				border: none;
 				border-radius: 5px;
@@ -60,25 +59,26 @@
 				padding-left: 10px;
 			}
 		}
-	}
+	
 
-	::-webkit-input-placeholder {
-		color: white;
-		font-size: 20px;
-	}
+		::-webkit-input-placeholder {
+			color: white;
+			font-size: 20px;
+		}
 
-	:-moz-placeholder { /* Firefox 18- */
-		color: white;
-		font-size: 20px;  
-	}
+		:-moz-placeholder { /* Firefox 18- */
+			color: white;
+			font-size: 20px;  
+		}
 
-	::-moz-placeholder {  /* Firefox 19+ */
-		color: white;  
-		font-size: 20px;
-	}
+		::-moz-placeholder {  /* Firefox 19+ */
+			color: white;  
+			font-size: 20px;
+		}
 
-	:-ms-input-placeholder {  
-		color: white;  
-		font-size: 20px;
+		:-ms-input-placeholder {  
+			color: white;  
+			font-size: 20px;
+		}
 	}
 }

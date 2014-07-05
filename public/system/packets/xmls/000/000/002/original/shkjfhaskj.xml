@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet>
+  <exercise>
+    <id>1</id>
+    <type>MC</type>
+    <question>hkjashdk</question>
+    <answer/>
+    <hint></hint>
+    <choices>
+      <choiceA>askjdfhak</choiceA>
+      <choiceB>askdjfhak</choiceB>
+      <choiceC>ashkdjahk</choiceC>
+      <choiceD>askjdhaksjf</choiceD>
+    </choices>
+  </exercise>
+</packet>

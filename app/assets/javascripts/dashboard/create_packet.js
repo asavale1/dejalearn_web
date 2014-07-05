@@ -1,6 +1,9 @@
 var index = 0;
+var count = 0;
+$(document).ready(function() { $('#submit').hide(); });
 
 function createQuestion(){
+	$('#submit').show();
 	var qType = $('#type').val();
 	if(qType == "Multiple Choice"){
 		qType = "MC";
@@ -23,5 +26,18 @@ function createQuestion(){
         }
 	});
 
-	$("#type option[value='Add Question']").attr("selected", "selected");
+	$("#type").val(0);
+	count = count + 1;
+	reset(qType);
+
+	$('#submit').show();
+	
+}
+
+function deleteQuestion(Qindex){
+	$('#question-id-'+ Qindex).remove();
+	if(index == Qindex){
+		console.log("DELETE LAST QUESTION");
+	}
+	count = count - 1;
 }

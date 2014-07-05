@@ -63,31 +63,55 @@
 	</div>
 	<div class="scroll" id="packet">
 		<div id="packet-wrap">
+			<%= image_tag "home/design/book-page.png", id: "book-page-1" %>
+			<%= image_tag "home/design/book-page.png", id: "book-page-2" %>
+			<%= image_tag "home/design/book-page.png", id: "book-page-3" %>
+			<%= image_tag "home/design/book-page.png", id: "book-page-4" %>
+			<%= image_tag "home/design/book-page.png", id: "book-page-5" %>
 			<table id="packet-table-outer">
 				<tr>
 					<td>
 						<table id="packet-table-inner">
-							<tr>
+							<tr id="top-tab">
 								<td>
-									<button id="blue-tab">
+									<div id="blue-tab">
 										<h2 class="text-title"> What is packet creation?</h2>
-									</button>
-									<div id="effect" class="ui-widget-content">
-										<p>
-										Packet Info
-										</p>
+									</div>
+									<div class="outer-effect">
+										<div id="blue-slide" class="ui-widget-content">
+											<p>
+											Packet Info
+											</p>
+										</div>
 									</div>
 								</td>
 							</tr>
-							<tr>
+							<tr id="middle-tab">
 								<td>
-									<h2>Make money</h2>
-
+									<div id="beige-tab">
+										<h2  class="text-title">Make money</h2>
+									</div>
+									<div class="outer-effect">
+										<div id="beige-slide" class="ui-widget-content">
+											<p>
+												Money Info
+											</p>
+										</div>
+									</div>
 								</td>
 							</tr>
-							<tr>
+							<tr id="bottom-tab">
 								<td>
-									<h2>Create a packet</h2>
+									<div id="orange-tab" >
+										<h2 class="text-title">Create a packet</h2>
+									</div>
+									<div class="outer-effect">
+										<div id="orange-slide" class="ui-widget-content">
+											<p>
+												Create Info
+											</p>
+										</div>
+									</div>
 								</td>
 							</tr>
 						</table>
@@ -109,31 +133,57 @@
 
  <script>
 	$(function() {
-		// run the currently selected effect
-		function showEffect() {
-			// run the effect
-			var options = {}
-			$( "#effect" ).show( "blind", 1000 );
-		};
 
-		function hideEffect(){
-			$('#effect').hide("blind", 1000);
+		function showEffect(elem) {
+			$(elem).show( "blind", 1000 );
 		}
 
-		var show = true;
-		// set effect from select menu value
+		function hideEffect(elem){
+			$(elem).hide("blind", 1000);
+		}
+
+		var show_blue = true;
 		$( "#blue-tab" ).click(function() {
-			if(show){
-				showEffect();
-				show = false;
+			if(show_blue){
+				showEffect('#blue-slide');
+				show_blue = false;
 				return false;	
 			}else{
-				hideEffect();
-				show = true;
+				hideEffect('#blue-slide');
+				show_blue = true;
 				return false;
 			}
 			
 		});
-		$( "#effect" ).hide();
+
+		var show_beige = true;
+		$("#beige-tab").click(function(){
+			if(show_beige){
+				showEffect("#beige-slide");
+				show_beige = false;
+				return false;
+			}else{
+				hideEffect("#beige-slide");
+				show_beige = true;
+				return false;
+			}
+		});
+
+		var show_orange = true;
+		$("#orange-tab").click(function(){
+			if(show_orange){
+				showEffect("#orange-slide");
+				show_orange = false;
+				return false;
+			}else{
+				hideEffect("#orange-slide");
+				show_orange = true;
+				return false;
+			}
+		});
+
+		$("#orange-slide").hide();
+		$("#blue-slide").hide();
+		$("#beige-slide").hide();
 	});
 </script>

@@ -13,6 +13,6 @@
 //= require jquery9
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-fileupload
+//= require jquery-fileupload/basic
 //= require_tree ./global
 

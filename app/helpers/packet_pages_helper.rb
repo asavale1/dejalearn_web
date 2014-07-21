@@ -13,7 +13,7 @@ module PacketPagesHelper
 		return question_render
 	end
 
-	def create_xml(params)
+	def create_xml(params, packet_id)
 		require "builder"
 
 		builder = Builder::XmlMarkup.new(:indent=>2)
@@ -44,6 +44,15 @@ module PacketPagesHelper
 							c.choiceD(params["optionD-#{id}"])
 						}
 					elsif (params["type-#{id}"] == "IMC")
+						e.image(Images.where("packet_id = ? AND question_id = ?", packet_id, id).first.image.url(:original))
+
+						e.choices{ |c|
+							c.choiceA(params["optionA-#{id}"])
+							c.choiceB(params["optionB-#{id}"])
+							c.choiceC(params["optionC-#{id}"])
+							c.choiceD(params["optionD-#{id}"])
+						}
+
 					elsif (params["type-#{id}"] == "FIB")
 					end
 
@@ -62,5 +71,24 @@ module PacketPagesHelper
 		file = File.open("#{params[:title]}.xml")
 		return file
 		
+	end
+
+	def save_images(params, packet_id)
+		id_list = Array.new
+		params.keys.each do |key|
+			if key =~ /type-[0-9]+/
+				id_list.push(key.scan(/[0-9]+/)[0])
+			end
+		end
+
+		id_list.each do |id|
+			image = Images.new
+			
+			image.packet_id = packet_id
+			image.question_id = id
+			image.image = params["uploadType1-#{id}"]
+			image.save
+
+		end
 	end
 end

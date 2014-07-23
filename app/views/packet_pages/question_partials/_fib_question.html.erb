@@ -14,18 +14,41 @@
 		<%= hidden_field_tag "type-#{@index}", "FIB" %>
 		<tr>
 			<td>
-				<%= text_field_tag("question-#{@index}", nil, placeholder: "Enter the question", class: "fib-question", onkeyup: "verifyQuestion(#{@index})") %>
+				<table class="fib-table-left">
+					<tr>
+						<td>
+							<%= text_field_tag("question-#{@index}", nil, placeholder: "Enter the question", class: "fib-question", onkeyup: "verifyQuestion(#{@index})") %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<%= text_field_tag("answer-#{@index}", nil, placeholder: "Enter the answer", class: "fib-answer", onkeyup: "verifyAnswer(#{@index})") %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<%= text_field_tag("hint-#{@index}", nil, placeholder: "Enter a hint (optional)", class: "fib-hint") %>
+						</td>
+					</tr>
+				</table>
 			</td>
-		</tr>
-		<tr>
 			<td>
-				<%= text_field_tag("answer-#{@index}", nil, placeholder: "Enter the answer", class: "fib-answer", onkeyup: "verifyAnswer(#{@index})") %>
+				<table class="fib-table-right">
+					<tr>
+						<td>
+							<div class="fib-image-box" >
+								<%= file_field_tag "uploadType1-#{@index}" %>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<%= text_field_tag("uploadType2-#{@index}", nil, placeholder: "Image URL", class: "fib-image-text") %>
+						</td>
+					</tr>
+				</table>
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<%= text_field_tag("hint-#{@index}", nil, placeholder: "Enter a hint (optional)", class: "fib-hint") %>
-			</td>
-		</tr>
+		
 	</table>
 </div>

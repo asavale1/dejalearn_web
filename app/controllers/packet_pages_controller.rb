@@ -4,7 +4,7 @@ class PacketPagesController < ApplicationController
 	def dashboard
 		@packet = Packet.last
 		@images = Images.where("packet_id = ?", @packet.id).first
-
+		puts @images
 	end
 
 	def create_packet

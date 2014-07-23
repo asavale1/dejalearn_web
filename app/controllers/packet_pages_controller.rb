@@ -2,8 +2,8 @@ class PacketPagesController < ApplicationController
 	include PacketPagesHelper
 
 	def dashboard
-		@packet = Packet.find(8)
-		@images = Images.where("packet_id = ?", 8).first
+		@packet = Packet.last
+		@images = Images.where("packet_id = ?", @packet.id).first
 
 	end
 

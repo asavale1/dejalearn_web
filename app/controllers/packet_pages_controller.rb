@@ -46,5 +46,23 @@ class PacketPagesController < ApplicationController
 			render :json => { :valid => false }
 		end
 	end
+
+	def get_packet
+		data = {}
+		query = params[:query]
+		packets = Packet.where("title LIKE ?", "%#{query}%")
+		packets.each_with_index do |packet, index|
+			data[index] = {
+				:title => packet.title,
+				:description => packet.description,
+				:location => packet.xml
+			}
+		end
+
+		puts "\n\n"
+		puts data.to_json
+		puts "\n\n"
+		render :json => { packets: data.to_json }
+	end
 		
 end

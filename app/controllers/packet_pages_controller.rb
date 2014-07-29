@@ -63,7 +63,7 @@ class PacketPagesController < ApplicationController
 		puts "\n\n"
 		puts data.to_json
 		puts "\n\n"
-		render :json => { packets: data.to_json }
+		render :json => data.to_json
 	end
 		
 end

@@ -69,7 +69,9 @@ class PacketPagesController < ApplicationController
 
 	private
 		def get_alt_url(url)
-			return url.gsub("http://s3.amazonaws.com/dejalearn" ,"http://dejalearn.s3.amazonaws.com")
+			url = url.to_s.gsub("http://s3.amazonaws.com/dejalearn" ,"http://dejalearn.s3.amazonaws.com")
+			puts url
+			return url
 		end
 		
 end

@@ -52,11 +52,12 @@ class PacketPagesController < ApplicationController
 		data = {}
 		query = params[:query]
 		packets = Packet.where("title LIKE ?", "%#{query}%")
+
 		packets.each_with_index do |packet, index|
 			data[index] = {
 				:title => packet.title,
 				:description => packet.description,
-				:location => packet.xml
+				:location => get_alt_url(packet.xml)
 			}
 		end
 
@@ -65,5 +66,10 @@ class PacketPagesController < ApplicationController
 		puts "\n\n"
 		render :json => data.to_json
 	end
+
+	private
+		def get_alt_url(url)
+			return url.gsub("http://s3.amazonaws.com/dejalearn" ,"http://dejalearn.s3.amazonaws.com")
+		end
 		
 end

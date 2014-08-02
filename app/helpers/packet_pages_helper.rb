@@ -25,12 +25,13 @@ module PacketPagesHelper
 				id_list.push(key.scan(/[0-9]+/)[0])
 			end
 		end
-
+		index = 0
 		xml = builder.packet { |b| 
 
 			id_list.each do |id|
 				b.exercise { |e|
 					e.id(id)
+					e.number(index)
 					e.type(params["type-#{id}"])
 					e.question(params["question-#{id}"])
 					e.answer()
@@ -55,6 +56,7 @@ module PacketPagesHelper
 
 					elsif (params["type-#{id}"] == "FIB")
 					end
+					index += 1
 
 				}
 			end

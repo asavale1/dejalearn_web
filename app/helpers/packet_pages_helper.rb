@@ -30,8 +30,8 @@ module PacketPagesHelper
 
 			id_list.each do |id|
 				b.exercise { |e|
-					e.id(id)
 					e.number(index)
+					e.id(id)
 					e.type(params["type-#{id}"])
 					e.question(params["question-#{id}"])
 					e.answer()

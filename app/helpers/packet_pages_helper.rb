@@ -34,7 +34,7 @@ module PacketPagesHelper
 					e.id(id)
 					e.type(params["type-#{id}"])
 					e.question(params["question-#{id}"])
-					e.answer()
+					e.answer(params["answer-#{id}"])
 					e.hint(params["hint-#{id}"])
 
 					if (params["type-#{id}"] == "MC")

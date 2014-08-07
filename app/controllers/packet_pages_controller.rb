@@ -23,6 +23,10 @@ class PacketPagesController < ApplicationController
 		save_images(params, packet.id)		
 		packet.xml = create_xml(params, packet.id)
 		packet.save
+		
+		puts "\n\n"
+		puts params
+		puts "\n\n"
 
 		redirect_to action: "create_packet"
 	end

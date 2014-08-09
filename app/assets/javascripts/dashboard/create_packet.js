@@ -41,3 +41,8 @@ function deleteQuestion(Qindex){
 	}
 	count = count - 1;
 }
+
+function setCount(){
+	$('#count').val(count);
+	return;
+}

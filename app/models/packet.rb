@@ -3,7 +3,7 @@
 # => description	text
 # => tag			text
 # => xml			attachment
-# => number			integer
+# => count			integer
 #
 class Packet < ActiveRecord::Base
 	has_many :images, dependent: :destroy

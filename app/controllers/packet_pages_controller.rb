@@ -13,11 +13,12 @@ class PacketPagesController < ApplicationController
 	end
 
 	def submit_packet
-		
+
 		packet = Packet.new
 		packet.title = params[:title]
 		packet.description = params[:desc]
 		packet.tag = params[:tags]
+		packet.count = params[:count]
 		packet.save
 
 		save_images(params, packet.id)		
@@ -61,7 +62,8 @@ class PacketPagesController < ApplicationController
 			data[index] = {
 				:title => packet.title,
 				:description => packet.description,
-				:location => get_alt_url(packet.xml)
+				:location => get_alt_url(packet.xml),
+				:count => packet.count
 			}
 		end
 

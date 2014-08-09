@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140720232135) do
+ActiveRecord::Schema.define(version: 20140808020442) do
 
   create_table "images", force: true do |t|
     t.integer  "packet_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140720232135) do
     t.string   "xml_content_type"
     t.integer  "xml_file_size"
     t.datetime "xml_updated_at"
+    t.integer  "count"
   end
 
 end

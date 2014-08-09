@@ -22,7 +22,7 @@
 					<br />
 					<%= text_area_tag("desc", nil, placeholder: "Packet description (optional)") %>
 				</div>
-				
+        <%= hidden_field_tag "count", value: 0 %>				
 				<div id="question-form">
 				</div>
         
@@ -42,7 +42,7 @@
 					<%= text_field_tag("tags", nil, placeholder: "Tags") %>
 				</div>
 				<div id="submit-div">
-					<%= submit_tag("Submit Packet", id: "submit", class: "btn btn-primary") %>
+					<%= submit_tag("Submit Packet", id: "submit", class: "btn btn-primary", onclick: "setCount()") %>
 				</div>
 			<% end %>
 

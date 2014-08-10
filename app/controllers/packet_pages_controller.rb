@@ -3,9 +3,9 @@ class PacketPagesController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :only => :get_packet
 
 	def dashboard
-		@packet = Packet.last
-		@images = Images.where("packet_id = ?", @packet.id).first
-		puts @images
+		#@packet = Packet.last
+		#@images = Images.where("packet_id = ?", @packet.id).first
+		#puts @images
 	end
 
 	def create_packet

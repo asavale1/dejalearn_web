@@ -1,5 +1,5 @@
 module PacketPagesHelper
-	def get_question_layout(type)
+	def self.get_question_layout(type)
 		question_render = nil
 
 		if params[:type] == "MC"
@@ -13,7 +13,7 @@ module PacketPagesHelper
 		return question_render
 	end
 
-	def create_xml(params, packet_id)
+	def self.create_xml(params, packet_id)
 		require "builder"
 
 		builder = Builder::XmlMarkup.new(:indent=>2)
@@ -45,7 +45,8 @@ module PacketPagesHelper
 							c.choiceD(params["optionD-#{id}"])
 						}
 					elsif (params["type-#{id}"] == "IMC")
-						e.image(Images.where("packet_id = ? AND question_id = ?", packet_id, id).first.image.url(:original))
+						image_url = get_alt_url(Images.where("packet_id = ? AND question_id = ?", packet_id, id).first.image.url(:original))
+						e.image(image_url)
 
 						e.choices{ |c|
 							c.choiceA(params["optionA-#{id}"])
@@ -75,7 +76,7 @@ module PacketPagesHelper
 		
 	end
 
-	def save_images(params, packet_id)
+	def self.save_images(params, packet_id)
 		id_list = Array.new
 		params.keys.each do |key|
 			if key =~ /type-[0-9]+/
@@ -92,5 +93,11 @@ module PacketPagesHelper
 			image.save
 
 		end
+	end
+
+	def self.get_alt_url(url)
+		url = url.to_s.gsub("http://s3.amazonaws.com/dejalearn" ,"http://dejalearn.s3.amazonaws.com")
+		puts url
+		return url
 	end
 end

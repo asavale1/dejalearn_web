@@ -21,8 +21,8 @@ class PacketPagesController < ApplicationController
 		packet.count = params[:count]
 		packet.save
 
-		save_images(params, packet.id)		
-		packet.xml = create_xml(params, packet.id)
+		PacketPagesHelper.save_images(params, packet.id)		
+		packet.xml = PacketPagesHelper.create_xml(params, packet.id)
 		packet.save
 		
 		puts "\n\n"
@@ -34,7 +34,7 @@ class PacketPagesController < ApplicationController
 
 	def render_question
 		@index = params[:index].to_i + 1
-		question_render = get_question_layout(params[:type])
+		question_render = PacketPagesHelper.get_question_layout(params[:type])
 
 		render :json => {
 			:html => question_render,
@@ -62,7 +62,7 @@ class PacketPagesController < ApplicationController
 			data[index] = {
 				:title => packet.title,
 				:description => packet.description,
-				:location => get_alt_url(packet.xml),
+				:location => PacketPagesHelper.get_alt_url(packet.xml),
 				:count => packet.count
 			}
 		end
@@ -71,13 +71,6 @@ class PacketPagesController < ApplicationController
 		puts data.to_json
 		puts "\n\n"
 		render :json => data.to_json
-	end
-
-	private
-		def get_alt_url(url)
-			url = url.to_s.gsub("http://s3.amazonaws.com/dejalearn" ,"http://dejalearn.s3.amazonaws.com")
-			puts url
-			return url
-		end
+	end		
 		
 end

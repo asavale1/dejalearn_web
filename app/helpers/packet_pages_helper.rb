@@ -1,17 +1,5 @@
 module PacketPagesHelper
-	def self.get_question_layout(type)
-		question_render = nil
-
-		if params[:type] == "MC"
-			question_render = render_to_string partial: 'packet_pages/question_partials/mc_question'
-		elsif params[:type] == "IMC"
-			question_render = render_to_string partial: 'packet_pages/question_partials/imc_question'
-		elsif params[:type] == "FIB"
-			question_render = render_to_string partial: 'packet_pages/question_partials/fib_question'
-		end
-
-		return question_render
-	end
+	
 
 	def self.create_xml(params, packet_id)
 		require "builder"

@@ -34,7 +34,7 @@ class PacketPagesController < ApplicationController
 
 	def render_question
 		@index = params[:index].to_i + 1
-		question_render = PacketPagesHelper.get_question_layout(params[:type])
+		question_render = get_question_layout(params[:type])
 
 		render :json => {
 			:html => question_render,
@@ -71,6 +71,21 @@ class PacketPagesController < ApplicationController
 		puts data.to_json
 		puts "\n\n"
 		render :json => data.to_json
-	end		
+	end	
+
+	private
+		def get_question_layout(type)
+			question_render = nil
+
+			if type == "MC"
+				question_render = render_to_string partial: 'packet_pages/question_partials/mc_question'
+			elsif type == "IMC"
+				question_render = render_to_string partial: 'packet_pages/question_partials/imc_question'
+			elsif type == "FIB"
+				question_render = render_to_string partial: 'packet_pages/question_partials/fib_question'
+			end
+
+			return question_render
+		end	
 		
 end

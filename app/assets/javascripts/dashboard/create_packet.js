@@ -28,7 +28,7 @@ function createQuestion(){
 
 	$("#type").val(0);
 	count = count + 1;
-	reset(qType);
+	$('#submit').attr('disabled', "disabled");
 
 	$('#submit').show();
 	
@@ -39,6 +39,7 @@ function deleteQuestion(Qindex){
 	if(index == Qindex){
 		console.log("DELETE LAST QUESTION");
 	}
+	fullVerify();
 	count = count - 1;
 }
 

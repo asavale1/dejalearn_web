@@ -18,7 +18,7 @@
 		<td id="questions">
 			<%= form_tag({:action => 'submit_packet'}, :multipart => true, id: "fileupload") do %>
 				<div class="packet-info">
-					<%= text_field_tag("title", nil, placeholder: "Name your packet", onkeyup: "verifyTitle()") %>
+					<%= text_field_tag("title", nil, placeholder: "Name your packet", class: "field", onkeyup: "fullVerify()") %>
 					<br />
 					<%= text_area_tag("desc", nil, placeholder: "Packet description (optional)") %>
 				</div>
@@ -39,7 +39,7 @@
         </table>
 
 				<div class="packet-info">
-					<%= text_field_tag("tags", nil, placeholder: "Tags") %>
+					<%= text_field_tag("tags", nil, placeholder: "Tags", class: "field", onkeyup: "fullVerify()") %>
 				</div>
 				<div id="submit-div">
 					<%= submit_tag("Submit Packet", id: "submit", class: "btn btn-primary", onclick: "setCount()") %>

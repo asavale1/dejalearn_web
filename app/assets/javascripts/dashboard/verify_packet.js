@@ -18,6 +18,13 @@ function fullVerify(){
 		valid = false;
 	}
 
+	if(!(questions > 0)){
+		$('#submit').hide();
+		valid = false;
+	}else{
+		$('#submit').show();
+	}
+
 	if(valid){
 		$('#submit').removeAttr('disabled');
 	}else{

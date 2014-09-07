@@ -1,12 +1,5 @@
-<%= stylesheet_link_tag "dashboard/create_packet" %>
-<%= stylesheet_link_tag "dashboard/questions/mc_layout" %>
-<%= stylesheet_link_tag "dashboard/questions/imc_layout" %>
-<%= stylesheet_link_tag "dashboard/questions/fib_layout" %>
-
-<%= javascript_include_tag "dashboard/verify_packet" %>
-<%= javascript_include_tag "dashboard/create_packet" %>
-<%= javascript_include_tag "dashboard/questions/mc" %>
-<%= javascript_include_tag "dashboard/questions/imc" %>
+<%= stylesheet_link_tag "dashboard.css" %>
+<%= javascript_include_tag "dashboard.js" %>
 
 <div id="top-banner">
 	<%= image_tag "dashboard/logo.png", id: "logo" %>
@@ -15,6 +8,24 @@
 
 <table id="main-table">
 	<tr>
+    <td id="types">
+      <div class="navbar-fixed-top" >
+        <div class="row-fluid">
+          <div class="sidebar-nav-fixed" >
+            <div class="well">
+              <ul class="nav nav-list">
+                <li class="type">
+                  <%= button_tag image_tag("dashboard/mc.png"), onclick: "createQuestion('MC')" %>
+                </li>
+                <li class="type">
+                  <%= button_tag image_tag("dashboard/imc.png"), onclick: "createQuestion('IMC')" %>
+                </li>
+              </ul>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
 		<td id="questions">
 			<%= form_tag({:action => 'submit_packet'}, :multipart => true, id: "fileupload") do %>
 				<div class="packet-info">
@@ -22,18 +33,10 @@
 					<br />
 					<%= text_area_tag("desc", nil, placeholder: "Packet description (optional)") %>
 				</div>
-        <%= hidden_field_tag "count", value: 0 %>				
+        <%= hidden_field_tag "count", value: 0 %>
+
 				<div id="question-form">
 				</div>
-        
-        <div id="fileupload-loading">
-<!--          <input type="file" id="drop" name="upload" >
-            <div>
-              Add here
-            </div>
-          </input>-->
-        </div>
-        <br>
 
         <table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody>
         </table>
@@ -45,57 +48,16 @@
 					<%= submit_tag("Submit Packet", id: "submit", class: "btn btn-primary", onclick: "setCount()") %>
 				</div>
 			<% end %>
-
-			<div id="question-type">
-				<%= select_tag("type", options_for_select(["Add Question", "Multiple Choice", "Image Multiple Choice", "Fill in the Blank"]), onchange: "createQuestion()") %>
-			</div>
-
 		</td>
 		<td id="vertical-bar">
 		</td>
 		<td id="options">
-			options
+      <div id="option-list">
+        <ul>
+        </ul>
+      </div>
 		</td>
 	</tr>
 </table>
 
 </div>
-
-<script type="text/javascript" charset="utf-8">
-  $(function () {
-      $('#drop').fileupload({
-        singleFileUploads: false,
-        dataType: 'json',
-        dropZone: $('#drop'),
-        add: function (e, data) {
-            console.log(data)
-            console.log(data.value);
-            console.log("IN ADD");
-          /*  data.context = $('#submit').click(function () {
-              data.submit();
-              return true;
-            })
-            /*data.context = $('<button/>').text('Upload')
-                .appendTo(document.body)
-                .click(function () {
-                    data.context = $('#submit')//$('<p/>').text('Uploading...').replaceAll($(this));
-                    data.submit();
-                });*/
-            $("<img>").attr("src", data.files[0].path).appendTo('#drop');
-            //$.each(data.result.files, function (index, file) {
-            //    $('<p/>').text(file.name).appendTo(document.body);
-            //});
-        },
-        done: function (e, data) {
-          console.log("IN DONE");
-        },
-        submit: function( e, data) {
-          console.log("IN SUBMIT");
-        }
-      });
-  });
-  $(document).bind('drop dragover', function (e) {
-    e.preventDefault();
-  });
-
-</script>

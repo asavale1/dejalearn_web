@@ -77,7 +77,19 @@ module PacketPagesHelper
 			
 			image.packet_id = packet_id
 			image.question_id = id
-			image.image = params["uploadType1-#{id}"]
+			
+			puts "BEFORE"
+			if params["selectImage-#{id}"] == '' or params["selectImage-#{id}"].nil?
+				puts "URL\t#{params["urlImage-#{id}"]}"
+				image.image = params["urlImage-#{id}"]
+			end
+
+			if params["urlImage-#{id}"] == ''
+				puts "SELECT\t#{params["selectImage-#{id}"]}"
+				image.image = params["selectImage-#{id}"]
+			end
+			
+			puts "AFTER"
 			image.save
 
 		end

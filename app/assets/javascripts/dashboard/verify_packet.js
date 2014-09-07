@@ -1,5 +1,17 @@
+
 function fullVerify(){
+	var tValid = textVerify();
+
+	if(tValid){
+		$('#submit').removeAttr('disabled');
+	}else{
+		$('#submit').attr('disabled', "disabled");
+	}
+}
+
+function textVerify(){
 	var valid = true;
+
 	$('.field').map(function(index) {
 	    if(!$(this).val().trim()){
 	    	valid = false;
@@ -25,11 +37,25 @@ function fullVerify(){
 		$('#submit').show();
 	}
 
-	if(valid){
-		$('#submit').removeAttr('disabled');
-	}else{
-		$('#submit').attr('disabled', "disabled");
-	}
+	return valid;
 }
+
+function imageVerify(){
+	$('.field').map(function(index) {
+	    if(!$(this).val().trim()){
+	    	valid = false;
+	    }
+	});
+}
+
+function selectImageVerify(index){
+	console.log("selectImageVerify");
+	//$('#urlImage-'+index)
+}
+
+function urlImageVerify(){
+	console.log("urlImageVerify");
+}
+
 
 

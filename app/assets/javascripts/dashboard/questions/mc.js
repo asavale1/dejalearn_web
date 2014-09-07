@@ -4,3 +4,4 @@ function setMCAnswer(index){
 
 	fullVerify();
 }
+

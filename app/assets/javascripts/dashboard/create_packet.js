@@ -1,17 +1,11 @@
 var index = 0;
 var count = 0;
-$(document).ready(function() { $('#submit').hide(); });
+$(document).ready(function() { 
+	$('#submit').hide(); 
+});
 
-function createQuestion(){
+function createQuestion(qType){
 	$('#submit').show();
-	var qType = $('#type').val();
-	if(qType == "Multiple Choice"){
-		qType = "MC";
-	}else if(qType == "Image Multiple Choice"){
-		qType = "IMC";
-	}else if(qType == "Fill in the Blank"){
-		qType = "FIB";
-	}
 
 	$.ajax({
 		type: "GET",
@@ -26,7 +20,7 @@ function createQuestion(){
         }
 	});
 
-	$("#type").val(0);
+	$('#type').val("Add Question");
 	count = count + 1;
 	$('#submit').attr('disabled', "disabled");
 

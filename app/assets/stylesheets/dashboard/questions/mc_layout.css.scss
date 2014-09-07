@@ -3,7 +3,7 @@
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
-
+	background-color: #1598d3;
 	padding: 20px;
 
 	box-shadow: 0 0 5px 5px #000;
@@ -51,7 +51,7 @@
 				padding-left: 10px;
 			}
 
-			.mc-option{
+			.option{
 				width: 30%;
 				height: 40px;
 				border: none;
@@ -63,22 +63,22 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: white;
+		color: black;
 		font-size: 20px;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
-		color: white;
+		color: black;
 		font-size: 20px;  
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
-		color: white;  
+		color: black;  
 		font-size: 20px;
 	}
 
 	:-ms-input-placeholder {  
-		color: white;  
+		color: black;  
 		font-size: 20px;
 	}
 }

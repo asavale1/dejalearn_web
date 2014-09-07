@@ -1,0 +1,47 @@
+window.setInterval(function(){
+	$( ".option" ).droppable({
+		drop: function( event, ui ) {
+			var optVal = ui["draggable"][0]["childNodes"].item(0)["data"]; 
+			$(this).val(optVal);
+		}
+	});
+}, 1000);
+
+function createOption(elem){
+	console.log(allowOption(elem.value));
+	if(allowOption(elem.value) && elem.value){
+		var optElem = "<li id="+elem.value+" class='opt-val'>"+elem.value+
+		"<input type='image' src=<%= asset_path('dashboard/close.png')%> onclick=deleteOption('"+elem.value+"') /></li>"
+
+		$("#option-list ul").append(optElem);
+		$( "#option-list li" ).draggable({
+			appendTo: "body",
+			helper: "clone",
+			cursor: "move",
+			start: function (event, ui) {
+			   $(this).data("startingScrollTop",window.pageYOffset);
+			},
+			drag: function(event,ui){
+			   var st = parseInt($(this).data("startingScrollTop"));
+			   ui.position.top -= st;
+			}
+		});
+	}
+}
+
+function allowOption(value){
+	var allow = true;
+	$('.opt-val').map(function(index) {
+	   if($(this).text().toLowerCase() == value.toLowerCase()){
+	   		console.log($(this).text() + "\t" + value);
+	   		allow = false;
+	   }
+	});
+
+	return allow;
+}
+
+function deleteOption(id){
+	$('#' + id).empty();
+	$('#' + id).remove();
+}

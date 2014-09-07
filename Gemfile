@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass'
 gem 'sprockets'
-gem "jquery-fileupload-rails"
 gem 'builder', '~> 3.1.0'
 gem 'paperclip', "~> 4.1"
+gem 'dropzonejs-rails'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do

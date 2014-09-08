@@ -15,14 +15,15 @@ function selectImageUpload(index, elem){
 	reader.readAsDataURL(file);
 
 	$('#urlImage-' + index).val("");
-	selectImageVerify();
+	fullVerify();
 }
 
 function urlImageUpload(index){
 	var url = $('#urlImage-'+index).val();
 	$('#selectImage-'+index).val('');
-	
+
 	$('#imc-image-box-'+index).empty();
 	$('<img style="width: 200px; height: 200px;">').attr('src', url).appendTo('#imc-image-box-'+index);
-	console.log("urlImageUpload");
+	fullVerify();
+
 }

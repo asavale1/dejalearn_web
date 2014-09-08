@@ -59,12 +59,12 @@
 							<div id="imc-image-box-<%= @index%>" class="imc-image-box" onclick='$("#selectImage-<%= @index %>").click()' >
 								<h4>Click to add image</h4>
 							</div>
-							<%= file_field_tag "selectImage-#{@index}", onchange: "selectImageUpload(#{@index}, this)", style: "height:0px;overflow:hidden" %>
+							<%= file_field_tag "selectImage-#{@index}", onchange: "selectImageUpload(#{@index}, this)", style: "height:0px;overflow:hidden", class: "image-field" %>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<%= text_field_tag("urlImage-#{@index}", nil, onblur: "urlImageUpload(#{@index})", placeholder: "Image URL", class: "imc-image-text") %>
+							<%= text_field_tag("urlImage-#{@index}", nil, onblur: "urlImageUpload(#{@index})", placeholder: "Image URL", class: "imc-image-text image-field") %>
 						</td>
 					</tr>
 				</table>

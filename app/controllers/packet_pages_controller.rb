@@ -3,9 +3,7 @@ class PacketPagesController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :only => :get_packet
 
 	def dashboard
-		#@packet = Packet.last
-		#@images = Images.where("packet_id = ?", @packet.id).first
-		#puts @images
+		
 	end
 
 	def create_packet
@@ -56,7 +54,7 @@ class PacketPagesController < ApplicationController
 	def get_packet
 		data = {}
 		query = params[:query]
-		packets = Packet.where("title LIKE ?", "%#{query}%")
+		packets = Packet.where("lower(title) LIKE ?", "%#{query.downcase}%")
 
 		packets.each_with_index do |packet, index|
 			data[index] = {

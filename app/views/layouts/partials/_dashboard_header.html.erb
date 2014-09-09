@@ -1,11 +1,20 @@
-<header id="home-header" class="navbar navbar-fixed-top navbar-inverse">
-     <div class="navbar-inner">
+<%= stylesheet_link_tag "dashboard/header.css" %>
+
+<header id="dash-header" class="navbar navbar-fixed-top navbar-inverse">
+     <div id="dash-div">
           <ul class="nav nav-list">
-               <li style="float: left;">
-                    <strong><%= link_to "Home", dashboard_path %></strong>
+               <li class="img">
+                    <%= image_tag "dashboard/logo.png" %>
                </li>
-               <li style="float: right;">
-                    <strong><%= link_to "Create Packet", dashboard_create_path %></strong>
+               <li class="text">
+                    <div class="btn">
+                         <strong><%= link_to "Create Packet", dashboard_create_path %></strong>
+                    </div>
+               </li>
+               <li class="text">
+                    <div class="btn">
+                         <strong><%= link_to "Home", dashboard_path %></strong>
+                    </div>
                </li>
           </ul>
      </div>

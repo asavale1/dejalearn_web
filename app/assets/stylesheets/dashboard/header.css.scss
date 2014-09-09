@@ -1,0 +1,33 @@
+#dash-header{
+	div#dash-div{
+		ul{
+			list-style-type: none;
+			margin-right: 50px;
+			margin-left: 50px;
+			
+			li.text{
+				display: inline;
+				float: right;
+				margin-top: 10px;
+				div.btn{
+					width: 150px;
+
+					strong{
+						vertical-align: middle;
+					}
+					box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.75);
+					-moz-box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.75);
+					-webkit-box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.75);
+				}
+			}
+			li.img{
+				float: left;
+				img{
+					width: 150px;
+					height: 50px;
+					
+				}			
+			}
+		}
+	}
+}

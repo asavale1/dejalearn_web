@@ -1,6 +1,5 @@
 module PacketPagesHelper
 	
-
 	def self.create_xml(params, packet_id)
 		require "builder"
 

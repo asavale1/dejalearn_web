@@ -1,0 +1,93 @@
+#about #about-wrap{
+	padding-top: 50px;
+	height: 100%;
+	float: left;
+	background-color: #ffffff;
+	width: 97%;
+	margin-left: 1.5%;
+	position: relative;
+
+	#our-story{
+		width: 50%;
+		height: 100%;
+		float:left;
+		img{
+			display: block;
+			position: absolute;
+   			top: 50%;
+			transform: translate(100%, -50%);
+		}
+	}
+
+	#contact-us{
+		width: 50%;
+		height: 100%;
+		float: left;
+		img{
+			display: block;
+			position: absolute;
+   			top: 50%;
+			transform: translate(100%, -50%);
+		}
+	}
+
+/*
+	#about-table{
+		width: 100%;
+		background-color: #ffffff;
+		font-style: oblique;
+		color: #42coff;
+	}
+	
+	#about-top-table
+	{
+		width: 100%;
+	}
+	
+	#about-main-table
+	{
+		width: 100%;
+		height: 82%;
+		border-style: inset;
+		border-width: 10px;
+		
+		td
+		{
+			width: 672px;
+		}
+		#Box1
+		{
+			background-image: image-url('home/design/makefg1.png');
+			background-size: 25% 50%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#Box2
+		{
+			background-image: image-url('home/design/makefg.png');
+			background-size: 25% 50%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		
+		#Box1:hover{
+			background-image: image-url('home/design/whitepaper1.jpg');
+			background-size:100% 100%;
+			background-repeat: no-repeat;
+			height: 400px;
+			width: 1325px;
+		}
+		
+		#Box2:hover{
+			background-image: image-url('home/design/white.jpg');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			height: 400px;
+			width: 1325px;
+		}
+		
+	}
+	
+	*/
+
+}

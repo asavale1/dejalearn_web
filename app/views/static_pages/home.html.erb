@@ -2,6 +2,8 @@
 <%= stylesheet_link_tag "home" %>
 <%= javascript_include_tag "home" %>
 
+<script src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+
 <div id="main" class="main mbig">
 	<div class="scroll" id="home" >
 		<div id = "home-wrap">
@@ -63,11 +65,11 @@
 	</div>
 	<div class="scroll" id="packet">
 		<div id="packet-wrap">
-			<%= image_tag "home/design/book-page.png", id: "book-page-1" %>
-			<%= image_tag "home/design/book-page.png", id: "book-page-2" %>
-			<%= image_tag "home/design/book-page.png", id: "book-page-3" %>
-			<%= image_tag "home/design/book-page.png", id: "book-page-4" %>
-			<%= image_tag "home/design/book-page.png", id: "book-page-5" %>
+			<!--<%= image_tag "home/design/page.jpg", id: "book-page-1" %>
+			<%= image_tag "home/design/page.jpg", id: "book-page-2" %>
+			<%= image_tag "home/design/page.jpg", id: "book-page-3" %>
+			<%= image_tag "home/design/page.jpg", id: "book-page-4" %>
+			<%= image_tag "home/design/page.jpg", id: "book-page-5" %>-->
 			<table id="packet-table-outer">
 				<tr>
 					<td>
@@ -128,28 +130,12 @@
 	</div>
 	<div class="scroll" id="about">
 		<div id="about-wrap">
-			<div id="our-story">
-				<%= image_tag("home/story.png") %>
+			<div id="our-story" class="about-div">
+				<%= image_tag("home/compass.png", id: "story-img") %>
 			</div>
-			<div id="contact-us">
-				<%= image_tag("home/contact.png") %>
+			<div id="contact-us" class="about-div">
+				<%= image_tag("home/contact.png", id:"contact-img") %>
 			</div>
-			<!--
-			<table id="about-main-table">
-				
-				<tr>
-					<td id="Box1">
-					</td>
-					<td id="Box2">
-					</td>
-				</tr>
-			</table>
-			<table id="about-main-table2">
-				<tr>
-					<td id="Box3">
-					</td>
-				</tr>
-			</table>-->
 		</div>
 	</div>
 </div>

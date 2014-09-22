@@ -5,231 +5,118 @@
 		margin-left: 1.5%;
 		background-color: #fff;
 
-		#book-page-1{
-			position: fixed;
-			z-index: 70;
-			height: 100%;
-			margin-top: 30px;
-		}
-
-		#book-page-2{
-			position: fixed;
-			z-index: 50;
-			height: 100%;
-			margin-left: 30px;
-			margin-top: 30px;
-		}
-
-		#book-page-3{
-			position: fixed;
-			z-index: 30;
-			height: 100%;
-			margin-left: 40px;
-			margin-top: 30px;
-		}
-
-		#book-page-4{
-			position: fixed;
-			z-index: 10;
-			height: 100%;
-			margin-left: 50px;
-			margin-top: 30px;
-		}
-
-		#book-page-5{
-			position: fixed;
-			z-index: 0;
-			height: 100%;
-			margin-left: 60px;
-			margin-top: 30px;
-		}
-
 		#packet-table-outer{
 			height: 100%;
+			width: 100%;
 
 			td{
-				width: 50%;
-
-				#packet-table-inner{
-					height: 100%;
-
-					tr{
-						height: 33%;
-					}
-
-					#top-tab{
-						margin-top: 5%;
-						margin-left: 50px;
-						position: fixed;
-						z-index: 60;
-					}
-
-					#middle-tab{
-						position: fixed;
-						z-index: 40;
-						margin-top: 20%;
-					}
-
-					#bottom-tab{
-						position: fixed;
-						z-index: 20;
-						margin-top: 35%;
-					}
-
-					.text-title{
-						padding-right: 10px;
-						padding-top: 5px;
-						padding-bottom: 5px;
-						padding-left: -20px;
-						margin-bottom: 0px;
-					}
-
-					.outer-effect{
-						#blue-slide{
-							border: 0;
-							min-height: 100px;
-							width: 335px;
-							text-align: center;
-							margin: 0px;
-							padding: 0em; 
-							position: relative;
-
-							background-image: image-url('home/design/green-back.png');
-							background-size: 100% 100%;
-							background-repeat: no-repeat;
-							
-						}
-
-						#beige-slide{
-							border: 0;
-							min-height: 100px;
-							width: 335px;
-							text-align: center;
-							margin: 0px;
-							padding: 0em; 
-							position: relative;
-
-							background-image: image-url('home/design/green-back.png');
-							background-size: 100% 100%;
-							background-repeat: no-repeat;
-							
-						}
-
-						#orange-slide{
-							border: 0;
-							min-height: 100px;
-							width: 335px;
-							text-align: center;
-							margin: 0px;
-							padding: 0em; 
-							position: relative;
-
-							background-image: image-url('home/design/green-back.png');
-							background-size: 100% 100%;
-							background-repeat: no-repeat;
-							
-						}
-
-						-webkit-transform: translate3d(76px, 0, 0);
-						-moz-transform: translate3d(76px, 0, 0);
-						transform: translate3d(76px, 0, 0);
-					}
-
-					#blue-tab{
-						text-align: left;
-						border: none;
-						width: 550px;
-						background-image: image-url('home/design/page-marker.png');
-						background-size: 100% 100%;
-						background-repeat: no-repeat;
-					}
-
-					#beige-tab{
-						text-align: right;
-						border: none;
-						width: 425px;
-						background-image: image-url('home/design/beige-tab.png');
-						background-size: 100% 100%;
-						background-repeat: no-repeat;
-					}
-
-					#orange-tab{
-						text-align: right;
-						border: none;
-						width: 425px;
-						background-image: image-url('home/design/orange-tab.png');
-						background-size: 100% 100%;
-						background-repeat: no-repeat;
-					}
-					
-				}
+				width: 100%;
+				height: 100%;
+				padding: 5%;
 
 				.model{
 					width: 200px;
 				}
+
+				#flipbook{
+					width:100%;
+					height:100%;
+				}
+
+				#flipbook{
+
+					.page{
+						width:100%;
+						height:100%;
+						background-color: #082a44;
+						color: #fff;
+						text-align:center;
+						.page-div{
+							padding-left: 10%;
+							padding-right: 10%;
+							padding-top: 10%;
+						}
+						h4{
+							font-size:50px;
+							color: #fff;
+							margin-bottom: 50px;
+						}
+						h5{
+							font-size: 30px;
+							color: #fff;
+						}
+
+						img{
+							padding-top: 10%;
+						}
+					}
+					.page-wrapper{
+						-webkit-perspective:2000px;
+						-moz-perspective:2000px;
+						-ms-perspective:2000px;
+						-o-perspective:2000px;
+						perspective:2000px;
+					}
+
+					.hard{
+						background: #171717;
+						color:#fff;
+						-webkit-box-shadow:inset 0 0 5px #666;
+						-moz-box-shadow:inset 0 0 5px #666;
+						-o-box-shadow:inset 0 0 5px #666;
+						-ms-box-shadow:inset 0 0 5px #666;
+						box-shadow:inset 0 0 5px #666;
+						font-weight:bold;
+					}
+
+					.hard.p1{
+
+						p{
+							text-align: center;
+							padding-top: 70%;
+							color: white;
+							font-size: 40px;
+						}
+						background-image: image-url("home/design/book.png") !important;
+						background-size: 100%;
+					}
+
+					.hard.p9{
+						background-color: #171717;
+					}
+
+				}
+
+				#flipbook .odd.inner-page{
+					background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #082a44), color-stop(1, #DADADA));
+					background-image:-webkit-linear-gradient(right, #082a44 95%, #000 100%);
+					background-image:-moz-linear-gradient(right, #082a44 95%, #000 100%);
+					background-image:-ms-linear-gradient(right, #082a44 95%, #000 100%);
+					background-image:-o-linear-gradient(right, #082a44 95%, #000 100%);
+					background-image:linear-gradient(right, #082a44 95%, #000 100%);
+					-webkit-box-shadow:inset 0 0 5px #666;
+					-moz-box-shadow:inset 0 0 5px #666;
+					-o-box-shadow:inset 0 0 5px #666;
+					-ms-box-shadow:inset 0 0 5px #666;
+					box-shadow:inset 0 0 5px #666;
+				    
+				}
+
+				#flipbook .even.inner-page{
+					background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #082a44), color-stop(1, #dadada));
+					background-image:-webkit-linear-gradient(left, #082a44 95%, #000 100%);
+					background-image:-moz-linear-gradient(left, #082a44 95%, #000 100%);
+					background-image:-ms-linear-gradient(left, #082a44 95%, #000 100%);
+					background-image:-o-linear-gradient(left, #082a44 95%, #000 100%);
+					background-image:linear-gradient(left, #082a44 95%, #000 100%);
+					-webkit-box-shadow:inset 0 0 5px #666;
+					-moz-box-shadow:inset 0 0 5px #666;
+					-o-box-shadow:inset 0 0 5px #666;
+					-ms-box-shadow:inset 0 0 5px #666;
+					box-shadow:inset 0 0 5px #666;
+				}
 			}
 		}
 	}
-
-	#add-model{
-		-webkit-transform: translate3d(-102%, 0, 0);
-		-moz-transform: translate3d(-102%, 0, 0);
-		transform: translate3d(-102%, 0, 0);
-
-		-webkit-transition: -webkit-transform 500ms ease-out 1s;
-		-moz-transition: -moz-transform 500ms ease-out 1s;
-		transition: transform 500ms ease-out 1s;
-	}
-
-	#exercise-model{
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);	
-
-		-webkit-transition: -webkit-transform 500ms ease-out 1s;
-		-moz-transition: -moz-transform 500ms ease-out 1s;
-		transition: transform 500ms ease-out 1s;
-	}
-
-	#select-model{
-		-webkit-transform: translate3d(102%, 0, 0);
-		-moz-transform: translate3d(102%, 0, 0);
-		transform: translate3d(102%, 0, 0);
-
-		-webkit-transition: -webkit-transform 500ms ease-out 1s;
-		-moz-transition: -moz-transform 500ms ease-out 1s;
-		transition: transform 500ms ease-out 1s;
-	}
 }
 
-#packet.active{
-	#add-model{
-		-webkit-transform: translate3d(-50%, 30%, 0);
-		-moz-transform: translate3d(-50%, 30%, 0);
-		transform: translate3d(-50%, 30%, 0);
-
-		-webkit-transition: -webkit-transform 500ms ease-out 1s;
-		-moz-transition: -moz-transform 500ms ease-out 1s;
-		transition: transform 500ms ease-out 1s;
-	}
-
-	#exercise-model{
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-
-		-webkit-transition: -webkit-transform 500ms ease-out 1s;
-		-moz-transition: -moz-transform 500ms ease-out 1s;
-		transition: transform 500ms ease-out 1s;
-	}
-
-	#select-model{
-		-webkit-transform: translate3d(130%, -30%, 0);
-		-moz-transform: translate3d(130%, -30%, 0);
-		transform: translate3d(130%, -30%, 0);
-
-		-webkit-transition: -webkit-transform 500ms ease-out 1s;
-		-moz-transition: -moz-transform 500ms ease-out 1s;
-		transition: transform 500ms ease-out 1s;
-	}
-}

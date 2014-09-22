@@ -18,7 +18,6 @@ $(document).ready(function(){
     }, function(){
         console.log("Out of Hover Story");
         setStoryInterval();
-        //story
     });
 
     $("#contact-img").hover(function(){
@@ -31,6 +30,15 @@ $(document).ready(function(){
 
     setStoryInterval();
     setContactInterval();
+
+    $("#flipbook").turn({
+        width: "100%",
+        height: 500,
+        autoCenter: true,
+        elevation: 10
+    });
+
+    $("#flipbook").turn("page",3);
 });
 
 function setStoryInterval(){

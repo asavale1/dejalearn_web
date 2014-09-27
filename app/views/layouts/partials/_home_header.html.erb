@@ -1,65 +1,33 @@
-<header id="home-header" class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <table class="table-condensed outer-table">
-      <tr>
-        <td class="outer-td">
-            <a href="#">
-              <table class="inner-table">
-                <tr>
-                  <td class="image">
-                    <%= image_tag("home/nav/home.png") %>
-                  </td>
-                  <td class="text">
-                    <h4>Home</h4>
-                  </td>
-                </tr>
-              </table>
-            </a>
-        </td>
-        <td class="outer-td">
-          <a href="#">
-            <table class="inner-table">
-              <tr>
-                <td class="image">
-                  
-                    <%= image_tag("home/nav/mission.png") %>
-                </td>
-                <td class="text">
-                    <h4>Mission</h4>
-                </td>
-              </tr>
-            </table>
-          </a>
-        </td>
-        <td class="outer-td">
-          <a href="#">
-            <table class="inner-table">
-              <tr>
-                <td class="image">
-                  <%= image_tag("home/nav/content.png")%>
-                </td>
-                <td class="text">
-                  <h4>Packet Creation</h4>
-                </td>
-              </tr>
-            </table>
-          </a>
-        </td>
-        <td class="outer-td">
-          <a href="#">
-            <table class="inner-table">
-              <tr>
-                <td class="image">
-                  <%= image_tag("home/nav/about.png") %>
-                </td>
-                <td class="text">
-                  <h4>About Us</h4>
-                </td>
-              </tr>
-            </table>
-          </a>
-        </td>
-      </tr>
-    </table>
-  </div>
+<header id="dash-header" class="navbar navbar-fixed-top navbar-inverse home-header">
+     <div id="dash-div">
+          <ul id="menu" class="nav nav-list">
+              <li>
+                <div class="home">
+                  <%= image_tag("home/design/logo.png") %>
+                </div>
+              </li>
+              <li data-menuanchor="#1" class="active">
+                  <div class="home">
+                    <h3><strong><%= link_to "Home", "#1" %></strong></h3>
+                  </div>
+              </li>
+              <li data-menuanchor="#4">
+                  <div  class="text">
+                    <h4><strong><%= link_to "About Us", "#4" %></strong></h4>
+                  </div>
+              </li>
+              <li data-menuanchor="#3">
+                  <div  class="text">
+                    <h4><strong><%= link_to "Packet Creation", "#3" %></stong></h4>
+                  </div>
+              </li>
+              <li data-menuanchor="#2">
+                <div class="text">
+                  <h4><strong><%= link_to "Mission", "#2" %></strong></h4>
+                </div>
+              </li>
+          </ul>
+     </div>
 </header>
+
+<a class="active" href="http://localhost:3000/#4" data-index="4"></a>

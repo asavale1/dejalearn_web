@@ -4,14 +4,9 @@ var storyInterval;
 var contactInterval;
 
 $(document).ready(function(){
-	$(".main").onepage_scroll({
-    	sectionContainer: "div.scroll",
-    	easing: "ease",
-    	responsiveFallback: 600,
-    	loop: true,
-    	pagination: false,
-	});
-
+	
+    setupOnePageScroll()
+    
     $("#story-img").hover(function(){
         console.log("In Hover Story");
         window.clearInterval(storyInterval);
@@ -31,6 +26,25 @@ $(document).ready(function(){
     setStoryInterval();
     setContactInterval();
 
+    setupFlipbook();
+});
+
+function setupOnePageScroll(){
+    $('.main').fullpage({
+        scrollingSpeed: 1000,
+        easing: 'swing',
+        loopBottom: true,
+        anchors: ['#1', '#2', '#3', '#4'],
+        menu: "#menu"
+    });
+}
+
+function navClick(value){
+    console.log(this.value);
+    $(".main").jumpTo(value);
+}
+
+function setupFlipbook(){
     $("#flipbook").turn({
         width: "100%",
         height: 500,
@@ -39,7 +53,7 @@ $(document).ready(function(){
     });
 
     $("#flipbook").turn("page",3);
-});
+}
 
 function setStoryInterval(){
     storyInterval = window.setInterval(function(){
@@ -66,12 +80,16 @@ function setContactInterval(){
 function rotate(degrees, id){
     $("#" + id).css(
         {
-            '-webkit-transform' : 'rotate('+ degrees +'deg)',
-            '-moz-transform' : 'rotate('+ degrees +'deg) ',
-            '-ms-transform' : 'rotate('+ degrees +'deg) ',
-            'transform' : 'rotate('+ degrees +'deg) '
+            '-webkit-transform' : 'translate(0%, -50%) rotate('+ degrees +'deg)',
+            '-moz-transform' : 'translate(0%, -50%) rotate('+ degrees +'deg)',
+            '-ms-transform' : 'translate(0%, -50%) rotate('+ degrees +'deg)',
+            'transform' : 'translate(0%, -50%) rotate('+ degrees +'deg)'
         }
     );
+}
+
+function slideUp(id){
+    
 }
 
 function scroll(index){

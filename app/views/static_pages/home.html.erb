@@ -3,7 +3,7 @@
 <%= javascript_include_tag "home" %>
 
 <div id="main" class="main mbig">
-	<div class="scroll" id="home" >
+	<div class="section" id="home" >
 		<div id = "home-wrap">
 			<%= image_tag "home/hero_image.jpg" %>
 			<div id="app-form">
@@ -20,39 +20,25 @@
 			</div>
 		</div>	
 	</div>
-	<div class="scroll" id="mission">
+	<div class="section" id="mission">
 		<div id="mission-wrap">
-			<%= image_tag "home/paper.png", id: "paper-bg" %>
-  			<table id="mission-main-table">
-				<tr>
-					<td>
-						<h1>Our Mission</h1>
-					</td>
-					<td>
-						<h3>
-							At DejaLearn, we strive to maximize the overall learning potential by changing the way the modern student learns,one packet at a time. Our strategy aims to reduce anxiety, improve test scores, and foster a learning evironment that is conducive to long term retention of information learned in the classroom.
-						</h3>
-					</td>
-				</tr>
-			</table>
+			<!--<%= image_tag "home/paper.png", id: "paper-bg" %>-->
+			<div id="mission-top">
+				<p class="mission-title">Our Misson</p>
+				<p class="mission-content">
+					At DejaLearn, we strive to maximize the overall learning potential by changing the way the modern student learns,one packet at a time. Our strategy aims to reduce anxiety, improve test scores, and foster a learning evironment that is conducive to long term retention of information learned in the classroom.
+				</p>
+			</div>
 			<table id="mission-table">
 	  			<tr>
 	  				<td class="image">
 	  					<%= image_tag "home/model/home_model.png", id: "home_model"%>
 	  				</td>
-	  				<td id="problem-text">
-	  					<%= image_tag "home/notepad_left.png", class: "text-bg" %>
-	  					<div class="text left">
-	  						<h2>The Problem</h2>
-	  						<h4>Memorization is a very dry process, and many prefer to put it off until the very last moment. Often times we find ourselves scrabbling to cram information in a short span of time.</h4>
-	  					</div>
+	  				<td id="problem-text" class="text">
+	  					<%= image_tag "home/note-left.png", class: "text" %>
 	  				</td>
 	  				<td id="solution-text">
-	  					<%= image_tag "home/notepad_right.png", class: "text-bg" %>
-	  					<div class="text right">
-	  						<h2>The Solution</h2>
-	  						<h4>Dejalearn...with a schedule which adapts to your needs memorization becomes a breeze, and repetition ceases to be dry, a couple seconds is all it takes to answer a question.</h4>
-	  					</div>
+	  					<%= image_tag "home/note-right.png", class: "text" %>
 	  				</td>
 	  				<td class="image">
 	  					<%= image_tag "home/model/quiz_model.png", id: "quiz_model" %>
@@ -61,7 +47,7 @@
 	  		</table>
   		</div>
 	</div>
-	<div class="scroll" id="packet">
+	<div class="section" id="packet">
 		<div id="packet-wrap">
 			<table id="packet-table-outer">
 				<tr>
@@ -90,22 +76,20 @@
 								</div>
 							</div>
 							<div class="inner-page"> <%= image_tag "home/model/add_packet_model.png", id: "add-model", class: "model" %> </div>
-							<div class="inner-page">
+							<div class="hard">
 								<div class="page-div">
 
 									<%= link_to image_tag("home/design/compose.png"), dashboard_create_path, target: "_blank" %>
 									<h4>Create a packet</h4>
 								</div>
 							</div>
-							<div></div>
-							<div class="hard"></div>
 						</div>
 					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
-	<div class="scroll" id="about">
+	<div class="section" id="about">
 		<div id="about-wrap">
 			<div id="our-story" class="about-div">
 				<%= image_tag("home/compass.png", id: "story-img") %>

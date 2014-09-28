@@ -82,6 +82,7 @@
 									<h4>Create a packet</h4>
 								</div>
 							</div>
+
 						</div>
 					</td>
 				</tr>
@@ -90,11 +91,21 @@
 	</div>
 	<div class="section" id="about">
 		<div id="about-wrap">
-			<div id="our-story" class="about-div">
-				<%= image_tag("home/compass.png", id: "story-img") %>
+			<div id="about-top">
+				<div id="our-story" class="about-div">
+					<%= image_tag("home/compass.png", id: "story-img") %>
+				</div>
+				<div id="contact-us" class="about-div">
+					<%= image_tag("home/contact.png", id:"contact-img") %>
+				</div>
 			</div>
-			<div id="contact-us" class="about-div">
-				<%= image_tag("home/contact.png", id:"contact-img") %>
+			<div id="about-bottom">
+				<div id="story-info">
+					Hello
+				</div>
+				<div id="contact-info">
+					Hi
+				</div>
 			</div>
 		</div>
 	</div>

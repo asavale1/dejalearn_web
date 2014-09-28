@@ -8,25 +8,33 @@ $(document).ready(function(){
     setupOnePageScroll()
     
     $("#story-img").hover(function(){
+        
         console.log("In Hover Story");
         window.clearInterval(storyInterval);
+        $("#story-info").show("slide", { direction: "down" }, 1000);
+
     }, function(){
-        console.log("Out of Hover Story");
         setStoryInterval();
+        $('#story-info').hide("slide", { direction: "down" }, 1000);  
     });
 
     $("#contact-img").hover(function(){
-        console.log("In Hover Contact");
+        
         window.clearInterval(contactInterval);
+        $("#contact-info").show("slide", { direction: "down" }, 1000);
+    
     }, function(){
-        console.log("Out of Hover Contact");
         setContactInterval();
+        $('#contact-info').hide("slide", { direction: "down" }, 1000);
     });
 
     setStoryInterval();
     setContactInterval();
 
     setupFlipbook();
+
+    $('#story-info').hide();
+    $('#contact-info').hide();
 });
 
 function setupOnePageScroll(){
@@ -88,8 +96,15 @@ function rotate(degrees, id){
     );
 }
 
-function slideUp(id){
-    
+function slideUp(degrees, id){
+    /*$("#" + id).css(
+        {
+            '-webkit-transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)',
+            '-moz-transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)',
+            '-ms-transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)',
+            'transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)'
+        }
+    );*/
 }
 
 function scroll(index){

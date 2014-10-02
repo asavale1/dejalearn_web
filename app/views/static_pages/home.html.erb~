@@ -109,7 +109,7 @@
 						<h3> Talk to Us! </h3>
                                                 Email Address:<input type="text" name="email"><br>
                                                 Content:<input type="text" name="Content"><br>
-						<input id="submit" class="input" type="submit" value="Send" />
+						<input id="submit" class="input" type="submit" value="Let me know when it's ready" />
 					</form>
 				</div>
 			</div>

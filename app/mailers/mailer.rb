@@ -1,5 +1,5 @@
 class Mailer < ActionMailer::Base
-  default from: "test@dejalearn.com"
+  default from: "notify@dejalearn.com"
 
   def notify_email(name, email)
   	@name = name

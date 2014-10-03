@@ -1,5 +1,7 @@
 Dejalearn::Application.routes.draw do
   root 'static_pages#home'
+  match '/email', to: 'static_pages#email', via: 'post'
+  
   match '/dashboard', to: 'packet_pages#dashboard', via: 'get'
   match '/dashboard/create', to: 'packet_pages#create_packet', via: 'get'
   match '/dashboard/render_question', to: 'packet_pages#render_question', via: 'get'

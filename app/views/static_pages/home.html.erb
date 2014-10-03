@@ -7,7 +7,7 @@
 		<div id = "home-wrap">
 			<%= image_tag "home/hero_image.jpg" %>
 			<div id="app-form">
-				<form id="subscribe">
+				<%= form_tag({:action => 'email'}, :multipart => true, id: "subscribe") do %>
 					<h4>Want the app?</h4>
 					<div id="name">
 						<input class="input input-field" type="text" name="name" placeholder="Your Name"/>
@@ -15,8 +15,8 @@
 					<div id="email">
 						<input class="input input-field" type="text" name="email" placeholder="Your Email" />
 					</div>
-					<input id="submit" class="input" type="submit" value="Let me know when it's ready" />
-				</form>
+					<%= submit_tag("Let me know when it's ready", id: "submit", class: "btn btn-primary input") %>
+				<% end %>
 			</div>
 		</div>	
 	</div>

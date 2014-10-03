@@ -30,7 +30,7 @@ Dejalearn::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 25,
-    :domain               => 'gmail.com',
+    :domain               => 'nameless-lowlands-4020.herokuapp.com',
     :user_name            => ENV['GMAIL_USERNAME'],
     :password             => ENV['GMAIL_PASSWRD'],
     :authentication       => 'plain',

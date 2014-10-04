@@ -28,6 +28,12 @@ $(document).ready(function(){
         $('#contact-info').hide("slide", { direction: "down" }, 1000);
     });
 
+    $('#submit').click(function(){
+        $('#Contact').attr('action','mailto:asavale1@yahoo.com?subject=' + 
+            $('#email').val() + 'body=' + $('#Content').val());
+        $('#Contact').submit();
+    });
+
     setStoryInterval();
     setContactInterval();
 

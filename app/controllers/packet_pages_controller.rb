@@ -1,4 +1,6 @@
 class PacketPagesController < ApplicationController
+	before_action :authenticate_user!
+	
 	include PacketPagesHelper
 	skip_before_filter :verify_authenticity_token, :only => :get_packet
 

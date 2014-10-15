@@ -1,0 +1,41 @@
+div#sign-up{
+	width: 100%;
+	text-align: center;		
+	background-color: #fff;
+	height: 500px;
+
+	div.registration-info{
+		float: left;
+		width: 70%;
+		img{
+			width: 40%;
+		}
+	}
+
+	div.registration-form{
+		height: 100%;
+		width: 30%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 1%;
+		float: left;
+
+		font-size: 20px;
+		color: #000;
+
+		input.text{
+			width: 100%;
+			color: #000;
+		}
+
+		input.submit{
+			width: 60%;
+			color: #fff;
+		}
+
+		div{
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+}

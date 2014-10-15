@@ -7,6 +7,8 @@ gem 'sprockets'
 gem 'builder', '~> 3.1.0'
 gem 'paperclip', "~> 4.1"
 gem 'slim'
+gem 'devise'
+
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do

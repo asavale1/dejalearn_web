@@ -33,6 +33,23 @@ $(document).ready(function(){
             $('#email').val() + 'body=' + $('#Content').val());
         $('#Contact').submit();
     });
+    
+    /*var data = {
+
+        name: $("#name").val()
+        email_id: $("#email").val()
+        content : $("#Content").val()
+    };
+    
+
+    $.ajax({
+        type: "POST",
+        url: "email.php",
+        data: $(form).serialize(),
+        success: function(){
+        $('.success').fadeIn(1000);
+        }
+    });*/
 
     setStoryInterval();
     setContactInterval();

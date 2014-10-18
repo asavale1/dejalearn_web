@@ -1,11 +1,34 @@
 class PacketPagesController < ApplicationController
-	before_action :authenticate_user!
+	before_filter :verify_signed_in
 	
 	include PacketPagesHelper
+
 	skip_before_filter :verify_authenticity_token, :only => :get_packet
+	skip_before_filter :verify_signed_in, :only => [:sign_in, :log_in, :sign_up]
+
+	def sign_in
+		@user_log_in = User.new
+		@user_sign_up = User.new
+	end
+
+	def log_in
+		puts "\n\n"
+		puts params[:user]
+		puts "\n\n"
+
+		redirect_to action: "sign_in"
+	end
+
+	def sign_up
+		puts "\n\n"
+		puts params[:user]
+		puts "\n\n"
+
+		redirect_to action: "sign_in"
+	end
 
 	def dashboard
-		
+				
 	end
 
 	def create_packet
@@ -86,6 +109,12 @@ class PacketPagesController < ApplicationController
 			end
 
 			return question_render
-		end	
+		end
+
+		def verify_signed_in
+			unless user_signed_in?
+				redirect_to :action => "sign_in"
+			end 
+		end
 		
 end

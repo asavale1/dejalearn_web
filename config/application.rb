@@ -28,6 +28,7 @@ module Dejalearn
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.precompile += ['home.js', 'home.css']
     config.assets.precompile += ['dashboard.js', 'dashboard.css']
+    config.assets.precompile += ['sign-in.js', 'sign-in.css']
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 

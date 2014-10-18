@@ -9,6 +9,9 @@ Dejalearn::Application.routes.draw do
   match '/dashboard/check_title', to: 'packet_pages#check_title', via: 'get'
   match '/dashboard/submit_packet', to: 'packet_pages#submit_packet', via: 'post'
   match '/dashboard/kewoiaxihxlqveg', to: 'packet_pages#get_packet', via: 'post'
+  match '/dashboard/sign_in', to: 'packet_pages#sign_in', via: 'get'
+  match '/dashboard/sign_up', to: 'packet_pages#sign_up', via: 'post'
+  match '/dashboard/log_in', to: 'packet_pages#log_in', via: "post"
   #get 'static_pages/home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

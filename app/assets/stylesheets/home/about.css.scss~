@@ -35,13 +35,55 @@
 			height: 100%;
 		}
 
+		#about-us{
+			color: #ffffff;
+		}
+
+		#Story{
+			color: #ffffff;
+		}
+
 		#contact-info{
 			background-color: #163450;
 			height: 100%;
 		}
-		
-		#submit{
+
+		#Contact{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+			height: 100;
 			background-color: #282828;
+		}
+
+		#title{
+			color: #ffffff;
+		}
+
+
+		.input{
+			margin: auto;
+			border-radius: 5px;
+			height: 20px;
+		}
+
+		.input-field{
+			margin-top: 2px;
+			margin-bottom: 2px;
+		}
+
+		
+		#content{
+			margin-left: auto;
+			margin-right: auto;
+			height: 50px;
+			width: 300px;
+		}
+
+		#submit{
+			background-color: #000000;
 			border: none;
 			margin: 0px;
 			color: #fff;

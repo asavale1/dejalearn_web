@@ -114,7 +114,7 @@
 						<input id="submit" class="input" type="submit" value="Send" />
 					</form>-->
 					
-					<%= form_tag({:action => 'email'}, :multipart => true, id: "Contact") do %>
+					<%= form_tag({:action => 'email'}, :multipart => true, id: "Content") do %>
 						<h4 id ="title">Talk to Us!</h4>
 						<div id="name">
 
@@ -127,7 +127,7 @@
 							Content: <input class="input input-field" type="text" name="content" plaaceholder="Content" />
 						</div>
 
-						<%= submit_tag("Send!", id: "submit", class: "btn btn-primary input") %>
+						<%= submit_tag("Send", id: "submit", class: "btn btn-primary input") %>
 					<% end %>
 				</div>
 			</div>

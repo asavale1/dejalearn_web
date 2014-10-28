@@ -62,13 +62,18 @@
 			color: #ffffff;
 		}
 
-		#name{
-			padding-right: 125px;
+
+		.input{
+			margin: auto;
+			border-radius: 5px;
+			height: 20px;
 		}
 
-		#email{
-			padding-right: 67px;
+		.input-field{
+			margin-top: 2px;
+			margin-bottom: 2px;
 		}
+
 		
 		#content{
 			margin-left: auto;
@@ -80,7 +85,6 @@
 		#submit{
 			background-color: #000000;
 			border: none;
-			margin: 0px;
 			color: #fff;
 		}
 		

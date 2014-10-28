@@ -37,23 +37,18 @@ $(document).ready(function(){
     $('#submit').click(function(e){
 	e.preventDefault();
 	var form = ('$Contact');
-	var datastring = $(this).attr("action");
-        /*var name = $("#name").val()
+        var name = $("#name").val()
         var email_id = $("#email").val()
         var content = $("#Content").val()
-    	var datastring = 'Name: ' + name + ' Email: ' + email_id + ' Content: ' + content*/
+    	var datastring = 'Name: ' + name + ' Email: ' + email_id + ' Content: ' + content
 
     	$.ajax({
         	type: "POST",
         	url: "contact",
         	data: datastring,
         	success: function(){
-        		alert("Sent!");
-        	},
-		error: function(){
-			alert("Something went wrong!");	
-		}
-
+        	$('.success').fadeIn(1000);
+        	}
     	});
 	return false;
     })

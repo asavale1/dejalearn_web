@@ -72,20 +72,23 @@
 		.input-field{
 			margin-top: 2px;
 			margin-bottom: 2px;
+			#content
+			{
+				margin-left: auto;
+				margin-right: auto;
+				height: 50px;
+				width: 300px;
+			}
 		}
 
 		
-		#content{
-			margin-left: auto;
-			margin-right: auto;
-			height: 50px;
-			width: 300px;
-		}
+		
 
 		#submit{
 			background-color: #000000;
 			border: none;
-			margin: 0px;
+			height: 100px;
+			width: 75px;
 			color: #fff;
 		}
 		

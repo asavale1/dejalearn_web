@@ -1,14 +1,16 @@
 class PacketPagesController < ApplicationController
-	before_filter :verify_signed_in
-	
+	#include Devise::Controllers::InternalHelpers
 	include PacketPagesHelper
-
+#	before_action :authenticate_user!
+	#before_filter :require_no_authentication, :only => [:sign_in, :log_in, :sign_up]
+	before_filter :verify_signed_in
+	skip_before_filter :verify_signed_in, :only => [:sign_in, :log_in, :sign_up, :get_packet]
 	skip_before_filter :verify_authenticity_token, :only => :get_packet
-	skip_before_filter :verify_signed_in, :only => [:sign_in, :log_in, :sign_up]
 
-	def sign_in
-		@user_log_in = User.new
-		@user_sign_up = User.new
+	def sign_in_dash
+		
+		#@user_log_in = User.new
+		#@user_sign_up = User.new
 	end
 
 	def log_in
@@ -16,19 +18,37 @@ class PacketPagesController < ApplicationController
 		puts params[:user]
 		puts "\n\n"
 
-		redirect_to action: "sign_in"
+		user = User.where("email = ?", params[:email]).first
+		puts user
+		sign_in(:user, user)
+		redirect_to action: "dashboard"
 	end
 
 	def sign_up
+		user = User.new(:email => "#{params[:email]}", :password => "#{params[:password]}", :password_confirmation => "#{params[:password_confirmation]}")
+		user.save
 		puts "\n\n"
-		puts params[:user]
+		if user.save
+			render :js => "window.location = '#{dashboard_path}'"
+		else
+			count = 0
+			errors = Hash.new
+			user.errors.full_messages.each do |message|
+	    		puts message.class.name
+	    		errors[count] = message
+	    		count += 1
+	  		end
+			render :json => errors.to_json
+		end
+		
+		puts user
 		puts "\n\n"
 
-		redirect_to action: "sign_in"
+		
 	end
 
 	def dashboard
-				
+		puts "\n\nHELLO\n\n"
 	end
 
 	def create_packet
@@ -77,6 +97,7 @@ class PacketPagesController < ApplicationController
 	end
 
 	def get_packet
+
 		data = {}
 		query = params[:query]
 		packets = Packet.where("lower(title) LIKE ?", "%#{query.downcase}%")
@@ -112,6 +133,9 @@ class PacketPagesController < ApplicationController
 		end
 
 		def verify_signed_in
+			puts "\n\n"
+			puts user_signed_in?
+			puts "\n\n"
 			unless user_signed_in?
 				redirect_to :action => "sign_in"
 			end 

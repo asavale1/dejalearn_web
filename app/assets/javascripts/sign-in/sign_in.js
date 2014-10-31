@@ -22,9 +22,11 @@ function checkPassword(){
 }
 
 function signup(){
-	var email = $('#email').val();
-	var password = $('#password').val();
+	var email = $('.email_field').val();
+	var password = $('.password_field').val();
 	var password_confirmation = $('#password_confirmation').val();
+	console.log($('.email_field'));
+	console.log($('.password_field'));
 	$.ajax({
         type:"POST",
         data: {

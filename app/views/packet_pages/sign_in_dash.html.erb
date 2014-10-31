@@ -13,12 +13,15 @@
 
 		<div id="form">
 			<div>
+				<% if flash[:fail] %>
+					<h3><%= flash[:fail] %></h3>
+				<% end %>
 				<%= form_tag(dashboard_log_in_path, :method=>'post', :multipart => true) do %>
 					<div>
 					<%= email_field_tag :email, nil, autofocus: true, placeholder: "email", class: "text" %></div>
 
 					<div>
-					<%= password_field_tag :password, nil, autocomplete: "off", placeholder: "password", class: "text" %></div>
+					<%= password_field_tag :password, nil, autocomplete: "off", placeholder: "password", class: "text " %></div>
 
 					<div><%= submit_tag "Log in", class: "submit" %></div>
 				<% end %>
@@ -35,19 +38,19 @@
 					<%= label_tag :email %>
 					<a data-toggle="tooltip" data-placement="top" title="first tooltip">?</a>
 					<br />
-					<%= email_field_tag :email, nil, autofocus: true, class: "text" %>
+					<%= email_field_tag :email, nil, autofocus: true, class: "text email_field" %>
 				</div>
 				
 				<div>
 					<%= label_tag :password %>
 					<a data-toggle="tooltip" data-position="top" title="second tooltip">?</a>
 					<br />
-					<%= password_field_tag :password, nil, autocomplete: "off", class: "text" %>
+					<%= password_field_tag :password, nil, autocomplete: "off", class: "text password_field" %>
 				</div>
 				<div>
 					<%= label_tag :password_confirmation %>
 					<br />
-					<%= password_field_tag :password_confirmation, nil, autocomplete: "off", class: "text" %>
+					<%= password_field_tag :password_confirmation, nil, autocomplete: "off", class: "text confirm_field" %>
 				</div>
 			</div>
 			<div id="submit">

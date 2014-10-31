@@ -1,35 +1,32 @@
 class PacketPagesController < ApplicationController
-	#include Devise::Controllers::InternalHelpers
 	include PacketPagesHelper
-#	before_action :authenticate_user!
-	#before_filter :require_no_authentication, :only => [:sign_in, :log_in, :sign_up]
+
 	before_filter :verify_signed_in
-	skip_before_filter :verify_signed_in, :only => [:sign_in, :log_in, :sign_up, :get_packet]
+	skip_before_filter :verify_signed_in, :only => [:sign_in_dash, :log_in, :sign_up, :get_packet]
 	skip_before_filter :verify_authenticity_token, :only => :get_packet
 
 	def sign_in_dash
 		
-		#@user_log_in = User.new
-		#@user_sign_up = User.new
 	end
 
 	def log_in
-		puts "\n\n"
-		puts params[:user]
-		puts "\n\n"
 
 		user = User.where("email = ?", params[:email]).first
-		puts user
-		sign_in(:user, user)
-		redirect_to action: "dashboard"
+
+		if !user.nil? and user.valid_password?(params[:password])
+			sign_in(:user, user)
+		else
+			flash[:fail] = "* email or password incorrect"	
+		end
+		
+		redirect_to action: "create_packet"
 	end
 
 	def sign_up
 		user = User.new(:email => "#{params[:email]}", :password => "#{params[:password]}", :password_confirmation => "#{params[:password_confirmation]}")
-		user.save
-		puts "\n\n"
+
 		if user.save
-			render :js => "window.location = '#{dashboard_path}'"
+			render :js => "window.location = '#{dashboard_create_path}'"
 		else
 			count = 0
 			errors = Hash.new
@@ -137,7 +134,9 @@ class PacketPagesController < ApplicationController
 			puts user_signed_in?
 			puts "\n\n"
 			unless user_signed_in?
-				redirect_to :action => "sign_in"
+				redirect_to :action => "sign_in_dash"
+			else
+				puts current_user.email
 			end 
 		end
 		

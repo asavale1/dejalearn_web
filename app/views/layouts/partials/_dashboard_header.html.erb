@@ -8,6 +8,11 @@
                </li>
                <li class="text">
                     <div class="btn">
+                         <strong><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></strong>
+                    </div>
+               </li>
+               <li class="text">
+                    <div class="btn">
                          <strong><%= link_to "Create Packet", dashboard_create_path %></strong>
                     </div>
                </li>

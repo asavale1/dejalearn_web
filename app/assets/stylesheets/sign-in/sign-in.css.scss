@@ -43,10 +43,14 @@ div#sign-in{
 					margin-bottom: 4%;
 					color: #fff;
 				}
+				h3{
+					color: #FFC5C5;
+				}
 				div{
 					margin-top: 10px;
 					margin-bottom: 10px;
 					width: 100%;
+
 				}
 				input.text{
 					width: 90%;
@@ -86,10 +90,6 @@ div#sign-in{
 					p{
 						color: #FFC5C5;
 						padding: 5px;
-						//background: -webkit-linear-gradient(white, #00b7fb); /* For Safari 5.1 to 6.0 */
-						//background: -o-linear-gradient(white, #00b7fb); /* For Opera 11.1 to 12.0 */
-						//background: -moz-linear-gradient(white, #00b7fb); /* For Firefox 3.6 to 15 */
-						//background: linear-gradient(white, #00b7fb); /* Standard syntax (must be last) */
 					}
 				}
 			}

@@ -18,7 +18,7 @@ $(document).ready(function(){
         $('#story-info').hide("slide", { direction: "down" }, 1000);  
     });
 
-    $("#contact-img").hover(function(){
+    $("#contact-img").onclick(function(){
         
         window.clearInterval(contactInterval);
         $("#contact-info").show("slide", { direction: "down" }, 1000);
@@ -37,18 +37,23 @@ $(document).ready(function(){
     $('#submit').click(function(e){
 	e.preventDefault();
 	var form = ('$Contact');
-        var name = $("#name").val()
+	var datastring = $(this).attr("action");
+        /*var name = $("#name").val()
         var email_id = $("#email").val()
         var content = $("#Content").val()
-    	var datastring = 'Name: ' + name + ' Email: ' + email_id + ' Content: ' + content
+    	var datastring = 'Name: ' + name + ' Email: ' + email_id + ' Content: ' + content*/
 
     	$.ajax({
         	type: "POST",
-        	url: "contact",
+        	url: "home",
         	data: datastring,
         	success: function(){
-        	$('.success').fadeIn(1000);
-        	}
+        		alert("Sent!");
+        	},
+		error: function(){
+			alert("Something went wrong!");	
+		}
+
     	});
 	return false;
     })

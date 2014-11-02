@@ -54,7 +54,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			width: 40%;
-			height: 100;
+			height: 100%;
 			background-color: #282828;
 		}
 
@@ -79,6 +79,10 @@
 				height: 50px;
 				width: 300px;
 			}
+		}
+
+		.input-field, select, textarea{
+   			 color: #163450;
 		}
 
 		

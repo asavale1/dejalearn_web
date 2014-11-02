@@ -5,4 +5,3 @@ html
    body 
       h3 Name: #{@name}
       h3 Email: #{@email}
-      h3 Contetn: #{@content}

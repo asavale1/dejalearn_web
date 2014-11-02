@@ -45,7 +45,7 @@ $(document).ready(function(){
 
     	$.ajax({
         	type: "POST",
-        	url: "contact",
+        	url: "home",
         	data: datastring,
         	success: function(){
         		alert("Sent!");

@@ -6,7 +6,8 @@ class StaticPagesController < ApplicationController
 
 	def email
 		
-		if params[:name].empty? or params[:email].empty?
+		if !params[:name].empty? and !params[:email].empty?
+
 			Mailer.notify_email(params[:name], params[:email]).deliver
 		end
 		redirect_to action: "home"

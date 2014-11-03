@@ -4,7 +4,8 @@
      <div id="dash-div">
           <ul class="nav nav-list">
                <li class="img">
-                    <%= image_tag "dashboard/logo.png" %>
+                    <!--<%= image_tag "dashboard/logo.png" %>-->
+                    <h3>Hello <%= current_user.email %></h3>
                </li>
                <li class="text">
                     <div class="btn">
@@ -16,11 +17,11 @@
                          <strong><%= link_to "Create Packet", dashboard_create_path %></strong>
                     </div>
                </li>
-               <li class="text">
+               <!--<li class="text">
                     <div class="btn">
                          <strong><%= link_to "Home", dashboard_path %></strong>
                     </div>
-               </li>
+               </li>-->
           </ul>
      </div>
 </header>

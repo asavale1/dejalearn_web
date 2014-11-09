@@ -29,8 +29,7 @@
 		text-align: center;
 		margin-top: 10%;
 		color: #fff;
-		padding-left:20px;
-		padding-right: 20px;
+		
 		
 		#story-info{
 			background-color: #163450;
@@ -43,6 +42,8 @@
 
 		#Story{
 			color: #ffffff;
+			padding-left:20px;
+			padding-right: 20px;
 		}
 
 		#contact-info{
@@ -74,13 +75,9 @@
 		.input-field{
 			margin-top: 2px;
 			margin-bottom: 2px;
-			#content
-			{
-				margin-left: auto;
-				margin-right: auto;
-				height: 50px;
-				width: 300px;
-			}
+			margin-left: auto;
+			margin-right: auto;
+			
 		}
 
 		.input-field, select, textarea{

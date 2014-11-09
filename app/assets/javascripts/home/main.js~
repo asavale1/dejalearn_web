@@ -18,15 +18,15 @@ $(document).ready(function(){
         $('#story-info').hide("slide", { direction: "down" }, 1000);  
     });
 
-    $("#contact-img").onclick(function(){
-        
+    $("#contact-img").click(function(){
         window.clearInterval(contactInterval);
-        $("#contact-info").show("slide", { direction: "down" }, 1000);
-    
-    }, function(){
+        //$("#contact-info").show("slide", { direction: "down" }, 1000);
+    	$("#contact-info").slideToggle();
+	setContactInterval();
+    });/* function(){
         setContactInterval();
         $('#contact-info').hide("slide", { direction: "down" }, 1000);
-    });
+    });*/
 
    /* $('#submit').click(function(){
 	$('#Contact').attr('action','mailto:asavale1@yahoo.com?subject=' +

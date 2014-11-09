@@ -75,13 +75,9 @@
 		.input-field{
 			margin-top: 2px;
 			margin-bottom: 2px;
-			#content
-			{
-				margin-left: auto;
-				margin-right: auto;
-				height: 50px;
-				width: 300px;
-			}
+			margin-left: auto;
+			margin-right: auto;
+			
 		}
 
 		.input-field, select, textarea{
@@ -97,6 +93,7 @@
 			height: 50px;
 			width: 75px;
 			color: #fff;
+			margin-top: 10px;
 		}
 		
 	}

@@ -38,12 +38,14 @@
 
 		#about-us{
 			color: #ffffff;
+			padding-top: 10px;
 		}
 
 		#Story{
 			color: #ffffff;
 			padding-left:20px;
 			padding-right: 20px;
+			padding-top: 10px;
 		}
 
 		#contact-info{
@@ -63,6 +65,7 @@
 
 		#title{
 			color: #ffffff;
+			padding-bottom:5px;
 		}
 
 
@@ -79,20 +82,40 @@
 			margin-right: auto;
 			
 		}
+		#content
+		{
+			float:center;
+			padding-left: 18px;
+		}
+		#name
+		{
+			float:center;
+			padding-right: 23px;
+		}
+		#email
+		{
+			float:center;
+			padding-right:23px;
+		}
 
 		.input-field, select, textarea{
    			 color: #163450;
 		}
 
 		
-		
+		#button
+		{
+			background-color: #282828;
+			float: right;
+		}
 
 		#submit{
 			background-color: #000000;
 			border: none;
-			height: 50px;
+			height: 25px;
 			width: 75px;
 			color: #fff;
+			margin-top: 5px;
 		}
 		
 	}

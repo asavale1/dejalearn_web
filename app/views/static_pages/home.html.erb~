@@ -106,15 +106,10 @@
 				</div>
 				
 				<div id="contact-info">
-					<!--<form id="Contact">
-						<h3 id="title"> Talk to Us! </h3>
-						Name:<input id="name" type ="text" name="name"><br>
-						Email Address:<input id="email" type="text" name="email"><br>
-						Content:<input id="content" type="text" name="Content"><br>
-						<input id="submit" class="input" type="submit" value="Send" />
-					</form>-->
+
+					<button id="button">Close!</button>
 					
-					<%= form_tag({:action => 'email'}, :multipart => true, id: "Contact") do %>
+					<%= form_tag({:action => 'email2'}, :multipart => true, id: "Contact") do %>
 						<h4 id ="title">Talk to Us!</h4>
 						<div id="name">
 
@@ -124,10 +119,10 @@
 							Email: <input class="input input-field" type="text" name="email" placeholder="Email" />
 						</div>
 						<div id="content">
-							Content: <input class="input input-field" type="text" name="content" placeholder="Content" />
+							<textarea rows="2" cols="19" id ="content2" placeholder="Content"></textarea>
 						</div>
 
-						<%= submit_tag("Send!", id: "submit1", class: "btn btn-primary input") %>
+						<%= submit_tag("Send!", id: "submit", class: "btn btn-primary input") %>
 					<% end %>
 				</div>
 			</div>

@@ -21,7 +21,7 @@ $(document).ready(function(){
     $("#contact-img").click(function(){
         window.clearInterval(contactInterval);
         //$("#contact-info").show("slide", { direction: "down" }, 1000);
-    	$("#contact-info").slideToggle();
+    	$("#contact-info").show("slide", {direction: "down"}, 1000);
 	setContactInterval();
     });/* function(){
         setContactInterval();
@@ -33,6 +33,10 @@ $(document).ready(function(){
 	$('#email').val() + 'body=' + $('#Content').val());
 	$('#Contact').submit();
     });*/
+
+    $('#button').click(function(e){
+    	$("#contact-img").hide("slide", {direction:"down"},1000);
+    });
     
     $('#submit').click(function(e){
 	e.preventDefault();
@@ -56,7 +60,7 @@ $(document).ready(function(){
 
     	});
 	return false;
-    })
+    });
 
     setStoryInterval();
     setContactInterval();

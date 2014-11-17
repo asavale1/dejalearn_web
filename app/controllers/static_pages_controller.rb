@@ -14,5 +14,9 @@ class StaticPagesController < ApplicationController
 		
 	end
 
+	def notify
+
+	end
+
 end
 

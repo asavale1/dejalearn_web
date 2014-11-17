@@ -1,25 +1,13 @@
 <%= render partial: "layouts/partials/home_header" %>
-<%= stylesheet_link_tag "home" %>
+<%= stylesheet_link_tag "home-root" %>
 <%= javascript_include_tag "home" %>
 
 <div id="main" class="main mbig">
 	<div class="section" id="home" >
 		<div id = "home-wrap">
 			<div id="home-div">
-				<div id="app-form">
-					<!--
-					<%= form_tag({:action => 'email'}, :multipart => true, id: "subscribe") do %>
-						<h4>Want the app?</h4>
-						<div class="input">
-							<input class="input-field" type="text" name="name" placeholder="  Your Name" />
-						</div>
-						<div class="input">
-							<input class="input-field" type="text" name="email" placeholder="  Your Email" />
-						</div>
-						<div class="input">
-							<%= submit_tag("Let me know when it's ready", id: "submit", class: "btn btn-primary input-submit") %>
-						</div>
-					<% end %>-->
+				<div id="notify">
+					<%= link_to "Want the app?", "#" %>
 				</div>
 			</div>
 		</div>	

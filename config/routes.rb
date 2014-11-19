@@ -2,6 +2,7 @@ Dejalearn::Application.routes.draw do
   devise_for :users
   root 'static_pages#home'
   match '/email', to: 'static_pages#email', via: 'post'
+  match '/notify', to: 'static_pages#notify', via: 'get'
   
   match '/dashboard', to: 'packet_pages#dashboard', via: 'get'
   match '/dashboard/create', to: 'packet_pages#create_packet', via: 'get'

@@ -8,6 +8,7 @@ gem 'builder', '~> 3.1.0'
 gem 'paperclip', "~> 4.1"
 gem 'slim'
 gem 'devise'
+gem 'recaptcha', '~> 0.3.6'
 
 
 # Use sqlite3 as the database for Active Record

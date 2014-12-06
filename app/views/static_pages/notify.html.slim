@@ -1,8 +1,27 @@
+= stylesheet_link_tag "home-notify"
+
 = render partial: "layouts/partials/notify_header"
 
-table
-	tr
-		td#download
+div#outer
+	h4 Send us a note
+	div#inner
+		- unless flash[:notice].nil?
+			h1 = flash[:notice]
+		table
+			tr
+				td#download
+					= image_tag "home/notify/android-download.png"
 
-		td#notify
-			
+				td#notify
+					div#form
+						= form_tag({:action => 'email'}, multipart: true, id: "subscribe" )
+							
+							div#name.input-field
+								= text_field_tag("name", nil, placeholder: "Your Name", class: "text")
+							div#email.input-field
+								= text_field_tag("email", nil, placeholder: "Your Email", class: "text")
+							div#captcha
+								= recaptcha_tags
+							div#submit.input-field
+								= submit_tag("Let me know when it's ready", id: "submit", class: "btn btn-primary input")
+				

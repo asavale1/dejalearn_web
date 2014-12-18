@@ -97,16 +97,64 @@
 			</div>
 			<div id="about-bottom">
 				<div id="story-info">
-					<h2>About Us</h2> 
-	<p>Dejalearn started off as an idea during the college years of its founders. The whole idea of it was to making their lives easier studying for the ridiculous amount of tests that you have in college. From that it grew into a way to help everyone, not just to study but to learn anything that people wanted, whether it be art, music or chemistry. After working for more than a year, the idea has ccome to life for everyone to enjoy.</p>
+					<h2 id ="about-us">About Us</h2> 
+					<p id="story">Dejalearn started off as an idea during the college years of its founders. The whole idea of it was to making their lives easier studying for the ridiculous amount of tests that you have in college. From that it grew into a way to help everyone, not just to study but to learn anything that people wanted, whether it be art, music or chemistry. After working for more than a year, the idea has ccome to life for everyone to enjoy.</p>
 				</div>
+
+
 				<div id="contact-info">
-					<form id="Contact">
-						<h3> Talk to Us! </h3>
-                                                Email Address:<input type="text" name="email"><br>
-                                                Content:<input type="text" name="Content"><br>
-						<input id="submit" class="input" type="submit" value="Send" />
-					</form>
+					<button id="contact-close">Close!</button>
+					
+
+					<div id="contact-form">
+						<h4 id ="title">Talk to Us!</h4>
+						<%= form_tag({:action => 'contact_email'}, multipart: true, id: "subscribe" )  do %>
+							<table>
+								<tr>
+									<td class="col1">
+										<div id="name-title">
+											Name:
+										</div>
+									</td>
+									<td class="col2">
+										<div id="name-input">
+
+											<input class="input input-field" type="text" name="name" placeholder="Name" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col1">
+										<div id="email-title">
+											Email:
+										</div>
+									</td>
+									<td class="col2">
+										<div id="email-input">
+											<input class="input input-field" type="text" name="email" placeholder="Email" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col1">
+										<div id="message-title">
+											Message:
+										</div>
+									</td>
+									<td class="col2">
+										<div id="message-input">
+											<textarea rows="2" cols="18" id ="content-body" class="input" name="message" placeholder="Message"></textarea>
+										</div>
+									</td>
+								</tr>
+							</table>
+							<div id="contact-captcha">
+								<%= recaptcha_tags %>	
+							</div>
+							<%= submit_tag("Let me know when it's ready", id: "contact-submit", class: "btn btn-primary input")	%>
+						<% end %>
+
+					</div>				
 				</div>
 			</div>
 		</div>

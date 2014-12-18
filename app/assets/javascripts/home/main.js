@@ -24,8 +24,13 @@ $(document).ready(function(){
         $("#contact-info").show("slide", { direction: "down" }, 1000);
     
     }, function(){
+        //setContactInterval();
+        //$('#contact-info').hide("slide", { direction: "down" }, 1000);
+    });
+
+    $('#contact-close').click(function(e){
+        $("#contact-info").hide("slide", {direction:"down"},1000);
         setContactInterval();
-        $('#contact-info').hide("slide", { direction: "down" }, 1000);
     });
 
     $('#submit').click(function(){

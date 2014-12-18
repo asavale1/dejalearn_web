@@ -96,6 +96,11 @@
 				</div>
 			</div>
 			<div id="about-bottom">
+				<% unless flash[:notice].nil? %>
+					<div id="notice-info">
+						<h1><%= flash[:notice] %></h1>
+					</div>	
+				<% end %>
 				<div id="story-info">
 					<h2 id ="about-us">About Us</h2> 
 					<p id="story">Dejalearn started off as an idea during the college years of its founders. The whole idea of it was to making their lives easier studying for the ridiculous amount of tests that you have in college. From that it grew into a way to help everyone, not just to study but to learn anything that people wanted, whether it be art, music or chemistry. After working for more than a year, the idea has ccome to life for everyone to enjoy.</p>

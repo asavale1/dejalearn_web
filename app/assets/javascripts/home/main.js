@@ -11,7 +11,12 @@ $(document).ready(function(){
         
         console.log("In Hover Story");
         window.clearInterval(storyInterval);
+        
+        $("#contact-info").hide("slide", {direction:"down"},100);
+        setContactInterval();
+
         $("#story-info").show("slide", { direction: "down" }, 1000);
+        $("#notice-info").hide();
 
     }, function(){
         setStoryInterval();
@@ -22,11 +27,9 @@ $(document).ready(function(){
         
         window.clearInterval(contactInterval);
         $("#contact-info").show("slide", { direction: "down" }, 1000);
-    
-    }, function(){
-        //setContactInterval();
-        //$('#contact-info').hide("slide", { direction: "down" }, 1000);
-    });
+        $("#notice-info").hide();
+        
+    }, function(){});
 
     $('#contact-close').click(function(e){
         $("#contact-info").hide("slide", {direction:"down"},1000);
@@ -107,16 +110,6 @@ function rotate(degrees, id){
     );
 }
 
-function slideUp(degrees, id){
-    /*$("#" + id).css(
-        {
-            '-webkit-transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)',
-            '-moz-transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)',
-            '-ms-transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)',
-            'transform' : 'translate(0%, -100%) rotate('+ degrees +'deg)'
-        }
-    );*/
-}
 
 function scroll(index){
 	console.log(index);

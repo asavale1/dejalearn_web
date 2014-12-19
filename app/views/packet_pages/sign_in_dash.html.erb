@@ -4,58 +4,82 @@
 
 <div id="sign-in">
 	<div id="top">
-		<div id="links">
-			<%= image_tag "dashboard/logo_image.png" %>	
-			<div>	
-				<%= button_tag "Sign up", onclick: "showSignup()", id: "sign-up-button" %>
-			</div>
-		</div>
+		<table>
+			<tr>
+				<td>
+					<div id="links">
+						<%= image_tag "dashboard/logo_image.png" %>	
+						<div>	
+							<%= button_tag "Sign up", onclick: "showSignup()", id: "sign-up-button" %>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div id="form">
+						<div>
+							<% if flash[:fail] %>
+								<h3><%= flash[:fail] %></h3>
+							<% end %>
+							<%= form_tag(dashboard_log_in_path, :method=>'post', :multipart => true) do %>
+								<div>
+								<%= email_field_tag :email, nil, autofocus: true, placeholder: "email", class: "text" %></div>
 
-		<div id="form">
-			<div>
-				<% if flash[:fail] %>
-					<h3><%= flash[:fail] %></h3>
-				<% end %>
-				<%= form_tag(dashboard_log_in_path, :method=>'post', :multipart => true) do %>
-					<div>
-					<%= email_field_tag :email, nil, autofocus: true, placeholder: "email", class: "text" %></div>
+								<div>
+								<%= password_field_tag :password, nil, autocomplete: "off", placeholder: "password", class: "text " %></div>
 
-					<div>
-					<%= password_field_tag :password, nil, autocomplete: "off", placeholder: "password", class: "text " %></div>
-
-					<div><%= submit_tag "Log in", class: "submit" %></div>
-				<% end %>
-			</div>
-		</div>
+								<div><%= submit_tag "Log in", class: "submit" %></div>
+							<% end %>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
 	</div>
 	<div id="bottom">
 		<div id="errors">
 		</div>
 		<div id="sign-up">
-			<div id="fields">
-				
-				<div>
-					<%= label_tag :email %>
-					<a data-toggle="tooltip" data-placement="top" title="first tooltip">?</a>
-					<br />
-					<%= email_field_tag :email, nil, autofocus: true, class: "text email_field" %>
-				</div>
-				
-				<div>
-					<%= label_tag :password %>
-					<a data-toggle="tooltip" data-position="top" title="second tooltip">?</a>
-					<br />
-					<%= password_field_tag :password, nil, autocomplete: "off", class: "text password_field" %>
-				</div>
-				<div>
-					<%= label_tag :password_confirmation %>
-					<br />
-					<%= password_field_tag :password_confirmation, nil, autocomplete: "off", class: "text confirm_field" %>
-				</div>
-			</div>
-			<div id="submit">
-				<%= button_tag "Sign up", class: "submit", onclick: "signup()" %>
-			</div>
+			<table>
+				<tr>
+					<td>
+						<div id="fields">
+							
+							<div>
+								<%= label_tag :email %>
+								<a data-toggle="tooltip" data-placement="top" title="first tooltip">?</a>
+								<br />
+								<%= email_field_tag :email, nil, autofocus: true, class: "text email_field" %>
+							</div>
+							
+							<div>
+								<%= label_tag :password %>
+								<a data-toggle="tooltip" data-position="top" title="second tooltip">?</a>
+								<br />
+								<%= password_field_tag :password, nil, autocomplete: "off", class: "text password_field" %>
+							</div>
+							<div>
+								<%= label_tag :password_confirmation %>
+								<br />
+								<%= password_field_tag :password_confirmation, nil, autocomplete: "off", class: "text confirm_field" %>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="captcha">
+							<%= recaptcha_tags ajax: false %>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="submit">
+							<%= button_tag "Sign up", class: "submit", onclick: "signup()" %>
+						</div>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>

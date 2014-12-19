@@ -25,22 +25,23 @@ class PacketPagesController < ApplicationController
 	def sign_up
 		user = User.new(:email => "#{params[:email]}", :password => "#{params[:password]}", :password_confirmation => "#{params[:password_confirmation]}")
 
-		if user.save
-			render :js => "window.location = '#{dashboard_create_path}'"
-		else
-			count = 0
-			errors = Hash.new
-			user.errors.full_messages.each do |message|
-	    		puts message.class.name
-	    		errors[count] = message
-	    		count += 1
-	  		end
-			render :json => errors.to_json
+		if verify_recaptcha == true
+			if user.save 
+				render :js => "window.location = '#{dashboard_create_path}'"
+			else
+				count = 0
+				errors = Hash.new
+				user.errors.full_messages.each do |message|
+		    		puts message.class.name
+		    		errors[count] = message
+		    		count += 1
+		  		end
+		  		puts errors.to_json
+				render :json => errors.to_json
+			end
 		end
-		
-		puts user
-		puts "\n\n"
 
+		render :json => "Captcha failed"
 		
 	end
 

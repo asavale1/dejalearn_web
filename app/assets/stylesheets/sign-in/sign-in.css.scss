@@ -1,16 +1,26 @@
 div#sign-in{
 	width: 100%;
-	height: 800px;
-	text-align: center;		
+	height: 100vh;
+	text-align: center;	
 
 	div#top{
 		width: 100%;
 		height: 50%;
-		background-color: #fff;
-
-		div#links{
-			width: 50%;
+		table{
+			width: 100%;
 			height: 100%;
+			tr{
+				width: 100%;
+				td{
+					width: 50%;
+					height: 100%;
+				}
+			}
+		}
+		div#links{
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
 			float: left;
 			div{
 				button{
@@ -28,9 +38,10 @@ div#sign-in{
 		}
 		div#form{
 			float: left;
-			width: 50%;
+			width: 100%;
 			height: 100%;
 			text-align: center;
+			background-color: #fff;
 
 			div{
 				background-color: #162f49;
@@ -79,7 +90,7 @@ div#sign-in{
 
 		div#errors{
 			width: 100%;	
-			height: 50%;
+			height: 20%;
 			div.message{
 				display: inline-block;
 				height: 100%;
@@ -97,12 +108,27 @@ div#sign-in{
 
 		div#sign-up{
 			width: 100%;
-			height: 50%;
+			height: 70%;
 			text-align: center;
+
+			table{
+				width: 100%;
+				height: 100%;
+				td{
+					width: 100;
+					padding: 10px;
+				}
+			}
+
+			div#captcha{
+				width: 330px;
+				margin-left: auto;
+				margin-right: auto;
+			}
 
 			div#fields{
 				width: 100%;
-				height: 50%;
+				height: 30%;
 
 				div{
     				display: inline-block;
@@ -123,7 +149,13 @@ div#sign-in{
 
 			div#submit{
 				width: 100%;
-				height: 50%;
+				height: 70%;
+				text-align: center;
+
+				div#captcha{
+					width: 30%;
+					margin-left: 30%;
+				}
 				.submit{
 					font-size: 40px;
 					border: 0px;

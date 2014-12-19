@@ -32,18 +32,20 @@ function signup(){
         data: {
         	"email" : email,
         	"password" : password,
-        	"password_confirmation" : password_confirmation
+        	"password_confirmation" : password_confirmation,
+            "recaptcha_challenge_field": $('#recaptcha_challenge_field').val(),
+            "recaptcha_response_field" : $("#recaptcha_response_field").val()
         },
         url: 'sign_up',
         success: function(data) { 
-        	console.log(data);
         	$('#errors').empty();
         	for(var i = 0; i < Object.keys(data).length; i++){
         		$('#errors').append('<div class="message" ><div><p>* '+data[i]+'</p></div></div>')
         	}
 		},
         error: function(data) { 
-            alert('Failed!');
+            $('#errors').empty();
+            $('#errors').append('<div class="message" ><div><p>* Captcha failed</p></div></div>')
         }
     });
 }

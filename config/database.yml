@@ -19,7 +19,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  database: asavale1_dejalearn
+  username: ENV['DB_USER']
+  password: ENV['DB_PASS']
   pool: 5
   timeout: 5000

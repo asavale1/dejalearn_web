@@ -7,6 +7,9 @@ set :user, "asavale1"
 set :deploy_to, '/home/asavale1/rails_apps/dejalearn'
 set :log_level, :debug
 
+set :use_sudo, false
+
+set :tmp_dir, "/home/asavale1/tmp"
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 

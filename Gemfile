@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass'
@@ -58,7 +59,8 @@ end
 # Use Capistrano for deployment
 group :development do
 	gem 'capistrano'
-	gem 'capistrano-rbenv'
+	gem 'capistrano-rvm'
+	#gem 'capistrano-rbenv'
 	gem 'capistrano-bundler'
 	gem 'capistrano-rails'
 end

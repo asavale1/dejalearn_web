@@ -22,6 +22,7 @@ group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 	gem 'aws-sdk'
+	gem "mysql2"
 end
 
 # Use SCSS for stylesheets

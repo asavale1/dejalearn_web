@@ -11,7 +11,7 @@ set :use_sudo, false
 
 set :tmp_dir, "/home/asavale1/tmp"
 
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/initializers/recaptcha.rb}
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 

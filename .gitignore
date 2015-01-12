@@ -22,3 +22,6 @@
 # Ignore test image upload
 /public/system/images
 /public/system/packets
+
+# Ignore configs
+config/initializers/recaptcha.rb

@@ -23,6 +23,7 @@ group :production do
 	gem 'rails_12factor'
 	gem 'aws-sdk'
 	gem "mysql2"
+	gem "unicorn"
 end
 
 # Use SCSS for stylesheets

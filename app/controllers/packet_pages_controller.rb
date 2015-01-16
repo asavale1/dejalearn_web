@@ -47,7 +47,7 @@ class PacketPagesController < ApplicationController
 	end
 
 	def dashboard
-		puts "\n\nHELLO\n\n"
+		puts "\n\nHELLO\n\n#{user_signed_in?}"
 	end
 
 	def create_packet

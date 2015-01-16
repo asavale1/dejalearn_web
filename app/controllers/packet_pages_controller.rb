@@ -40,9 +40,9 @@ class PacketPagesController < ApplicationController
 		  		puts errors.to_json
 				render :json => errors.to_json
 			end
+		else
+			render :json => "Captcha failed"
 		end
-
-		render :json => "Captcha failed"
 		
 	end
 

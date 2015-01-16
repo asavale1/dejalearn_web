@@ -6,6 +6,7 @@
 # => count			integer
 #
 class Packet < ActiveRecord::Base
+	belongs_to :user
 	has_many :images, dependent: :destroy
 
 	has_attached_file :xml

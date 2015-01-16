@@ -28,6 +28,7 @@ class PacketPagesController < ApplicationController
 		if verify_recaptcha == true
 			if user.save 
 				puts "\n\nUSER.SAVE FAILED\n"
+				sign_in(:user, user)
 				render :js => "window.location = '#{dashboard_create_path}'"
 			else
 				count = 0

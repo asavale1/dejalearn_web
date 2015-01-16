@@ -14,9 +14,19 @@ role :db,  %w{oxen.arvixe.com}
 # This can be used to drop a more detailed server definition into the
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
-
+ 
 server 'oxen.arvixe.com', user: 'asavale1', roles: %w{web app}
 
+
+namespace :deploy do
+	task :trigger_restart do 
+		on roles(:web) do
+			execute "echo 0 > #{shared_path}/restart"
+		end
+	end
+end
+
+after "deploy", "deploy:trigger_restart" 
 
 # Custom SSH Options
 # ==================

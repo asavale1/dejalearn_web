@@ -4,7 +4,7 @@ worker_processes (ENV['RAILS_ENV'] == 'production' ? 4 : 1)
 listen(12023, backlog: 64) if ENV['RAILS_ENV'] == 'production'
 timeout 300
 working_directory app_path
-pid app_path + '/tmp/unicorn.pid'
+pid app_path + '/../shared/unicorn/unicorn.pid'
 stderr_path app_path + '/log/unicorn.log'
 stdout_path app_path + '/log/unicorn.log'
 preload_app true

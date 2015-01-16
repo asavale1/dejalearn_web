@@ -21,7 +21,7 @@ server 'oxen.arvixe.com', user: 'asavale1', roles: %w{web app}
 namespace :deploy do
 	task :trigger_restart do 
 		on roles(:web) do
-			execute "echo 0 > #{shared_path}/restart"
+			execute "echo 0 > #{shared_path}/unicorn/restart"
 		end
 	end
 end

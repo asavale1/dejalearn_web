@@ -10,11 +10,9 @@ class StaticPagesController < ApplicationController
 		if !params[:name].empty? and !params[:email].empty?
 			if verify_recaptcha
 				Mailer.notify_email(params[:name], params[:email]).deliver
-				puts "\n\n WAY HERE\n\n"
 				flash[:notice] = "Successful"
 			end
 		end
-		puts "\n\nALL THE WAY HERE\n\n"
 		redirect_to action: "notify"
 		
 	end

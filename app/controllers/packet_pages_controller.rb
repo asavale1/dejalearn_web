@@ -52,6 +52,13 @@ class PacketPagesController < ApplicationController
 	end
 
 	def create_packet
+=begin
+		tag = Tag.first
+		#tag.packets.each do |pack|
+		#	puts "\n\n#{pack}\n\n"
+		#end
+		puts "\n\n#{tag.packets}\n\n"
+=end
 		@index = 0
 	end
 
@@ -60,16 +67,15 @@ class PacketPagesController < ApplicationController
 		packet = Packet.new
 		packet.title = params[:title]
 		packet.description = params[:desc]
-		packet.tag = params[:tags]
 		packet.count = params[:count]
+		packet.active = false
+		PacketPagesHelper.save_tags(params[:tags], packet)
 		packet.save
 
 		PacketPagesHelper.save_images(params, packet.id)		
 		packet.xml = PacketPagesHelper.create_xml(params, packet.id)
 		packet.created_by = current_user.id
 		packet.save
-
-
 		
 		puts "\n\n"
 		puts params
@@ -89,7 +95,6 @@ class PacketPagesController < ApplicationController
 	end
 
 	def check_title
-		puts params[:title]
 		packet = Packet.where("title = ?", params[:title].strip)
 	
 		if packet.length == 0
@@ -136,14 +141,8 @@ class PacketPagesController < ApplicationController
 		end
 
 		def verify_signed_in
-			puts "\n\n"
-			puts user_signed_in?
-			puts "\n\n"
 			unless user_signed_in?
-
 				redirect_to :action => "sign_in_dash", "data-no-turbolink" => true
-			else
-				puts current_user.email
 			end 
 		end
 		

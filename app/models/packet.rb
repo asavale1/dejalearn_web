@@ -6,7 +6,12 @@
 # => count			integer
 #
 class Packet < ActiveRecord::Base
-	has_and_belongs_to_many :users
+	has_many :downloads
+	has_many :users, :through => :downloads
+
+	has_many :tag_packets
+	has_many :tags, :through => :tag_packets
+
 	has_many :images, dependent: :destroy
 
 	has_attached_file :xml

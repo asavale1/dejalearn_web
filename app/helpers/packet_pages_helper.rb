@@ -49,12 +49,6 @@ module PacketPagesHelper
 				}
 			end
 		}
-
-		puts "\n\n"
-		puts params
-		puts "\n\n"
-		puts xml
-		puts "\n\n"
 		
 		File.open("#{params[:title]}.xml", "w"){ |f| f.write(xml) }
 
@@ -77,26 +71,42 @@ module PacketPagesHelper
 			image.packet_id = packet_id
 			image.question_id = id
 			
-			puts "BEFORE"
 			if params["selectImage-#{id}"] == '' or params["selectImage-#{id}"].nil?
-				puts "URL\t#{params["urlImage-#{id}"]}"
 				image.image = params["urlImage-#{id}"]
 			end
 
 			if params["urlImage-#{id}"] == ''
-				puts "SELECT\t#{params["selectImage-#{id}"]}"
 				image.image = params["selectImage-#{id}"]
 			end
 			
-			puts "AFTER"
 			image.save
 
 		end
 	end
 
+	def self.save_tags(tag_string, packet)
+		tags = tag_string.split(',')
+		tags.each do |tag|
+			new_tag = Tag.new(:tag => tag.strip , :used => 1)
+			
+			if new_tag.save
+				new_tag.packets << packet
+				new_tag.save
+			else 
+				t = Tag.where(:tag => tag).first
+				t.packets.each do |pack|
+					unless pack.id == packet.id
+						t.packets << packet
+						t.save
+					end
+				end
+				
+			end
+		end
+	end
+
 	def self.get_alt_url(url)
 		url = url.to_s.gsub("http://s3.amazonaws.com/dejalearn" ,"http://dejalearn.s3.amazonaws.com")
-		puts url
 		return url
 	end
 end

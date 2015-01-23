@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123032234) do
+ActiveRecord::Schema.define(version: 20150123050849) do
+
+  create_table "downloads", force: true do |t|
+    t.integer "user_id"
+    t.integer "packet_id"
+  end
 
   create_table "images", force: true do |t|
     t.integer  "packet_id"
@@ -27,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150123032234) do
   create_table "packets", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.text     "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "xml_file_name"
@@ -36,14 +40,20 @@ ActiveRecord::Schema.define(version: 20150123032234) do
     t.datetime "xml_updated_at"
     t.integer  "count"
     t.integer  "created_by"
+    t.boolean  "active"
   end
 
-  create_table "packets_users", id: false, force: true do |t|
+  create_table "tag_packets", force: true do |t|
+    t.integer "tag_id"
     t.integer "packet_id"
-    t.integer "user_id"
   end
 
-  add_index "packets_users", ["packet_id", "user_id"], name: "index_packets_users_on_packet_id_and_user_id"
+  create_table "tags", force: true do |t|
+    t.string   "tag"
+    t.integer  "used"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

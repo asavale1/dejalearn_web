@@ -3,7 +3,6 @@ class CreatePackets < ActiveRecord::Migration
     create_table :packets do |t|
       t.string :title
       t.text :description
-      t.text :tag
       t.integer :xml_id
 
       t.timestamps

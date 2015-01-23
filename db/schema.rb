@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116044309) do
+ActiveRecord::Schema.define(version: 20150123032234) do
 
   create_table "images", force: true do |t|
     t.integer  "packet_id"
@@ -35,10 +35,15 @@ ActiveRecord::Schema.define(version: 20150116044309) do
     t.integer  "xml_file_size"
     t.datetime "xml_updated_at"
     t.integer  "count"
-    t.integer  "user_id"
+    t.integer  "created_by"
   end
 
-  add_index "packets", ["user_id"], name: "index_packets_on_user_id"
+  create_table "packets_users", id: false, force: true do |t|
+    t.integer "packet_id"
+    t.integer "user_id"
+  end
+
+  add_index "packets_users", ["packet_id", "user_id"], name: "index_packets_users_on_packet_id_and_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

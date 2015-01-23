@@ -140,7 +140,8 @@ class PacketPagesController < ApplicationController
 			puts user_signed_in?
 			puts "\n\n"
 			unless user_signed_in?
-				redirect_to :action => "sign_in_dash"
+
+				redirect_to :action => "sign_in_dash", "data-no-turbolink" => true
 			else
 				puts current_user.email
 			end 

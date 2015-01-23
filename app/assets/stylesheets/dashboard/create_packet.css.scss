@@ -124,3 +124,17 @@ li.opt-val{
 		}
 	}
 }
+
+#csv-table{
+	position: absolute;
+	bottom: 0px;
+	margin-bottom: 30px;
+	width: 100%;
+	text-align: center;
+	tr{
+		width: 100%;
+		td{
+			width: 100%;
+		}
+	}
+}

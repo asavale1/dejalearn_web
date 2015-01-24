@@ -87,7 +87,7 @@ module PacketPagesHelper
 	def self.save_tags(tag_string, packet)
 		tags = tag_string.split(',')
 		tags.each do |tag|
-			new_tag = Tag.new(:tag => tag.strip , :used => 1)
+			new_tag = Tag.new(:tag => tag.downcase.strip , :used => 1)
 			
 			if new_tag.save
 				new_tag.packets << packet

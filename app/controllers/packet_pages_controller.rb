@@ -112,10 +112,11 @@ class PacketPagesController < ApplicationController
 
 		packets.each_with_index do |packet, index|
 			data[index] = {
-				:title => packet.title,
+				:id => packet.id,
+				:packet_title => packet.title,
 				:description => packet.description,
-				:location => PacketPagesHelper.get_alt_url(packet.xml),
-				:count => packet.count
+				:url => PacketPagesHelper.get_alt_url(packet.xml),
+				:ex_count => packet.count
 			}
 		end
 

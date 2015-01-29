@@ -60,7 +60,7 @@ class PacketPagesController < ApplicationController
 		puts "\n\n#{tag.packets}\n\n"
 =end
 		puts "\n\n"
-		Packet.first.xml
+		puts Packet.last.xml
 
 		puts "\n\n"
 		@index = 0

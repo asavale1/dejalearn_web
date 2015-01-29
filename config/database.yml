@@ -18,10 +18,10 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: mysql2
-  database: asavale1_dejalearn
-  username: ENV['DB_USER']
-  password: ENV['DB_PASS']
-  pool: 5
-  timeout: 5000
+#production:
+#  adapter: mysql2
+#  database: asavale1_dejalearn
+#  username: ENV['DB_USER']
+#  password: ENV['DB_PASS']
+#  pool: 5
+#  timeout: 5000

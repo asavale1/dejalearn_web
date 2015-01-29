@@ -59,10 +59,7 @@ class PacketPagesController < ApplicationController
 		#end
 		puts "\n\n#{tag.packets}\n\n"
 =end
-		puts "\n\n"
-		puts Packet.last.xml
 
-		puts "\n\n"
 		@index = 0
 	end
 
@@ -119,7 +116,7 @@ class PacketPagesController < ApplicationController
 				:id => packet.id,
 				:packet_title => packet.title,
 				:description => packet.description,
-				:url => PacketPagesHelper.get_alt_url(packet.xml),
+				:url => packet.xml,
 				:ex_count => packet.count
 			}
 		end

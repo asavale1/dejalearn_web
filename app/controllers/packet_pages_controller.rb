@@ -120,7 +120,7 @@ class PacketPagesController < ApplicationController
 				:id => packet.id,
 				:packet_title => packet.title,
 				:description => packet.description,
-				:url => PcketPacgesHelper.get_alt_url(packet.xml),
+				:url => PcketPagesHelper.get_alt_url(packet.xml),
 				:ex_count => packet.count
 			}
 		end

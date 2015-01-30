@@ -105,7 +105,7 @@ module PacketPagesHelper
 	end
 
 	def self.get_alt_url(url)
-		url = url.to_s.gsub("http://s3.amazonaws.com/dejalearn" ,"http://dejalearn.s3.amazonaws.com")
+		url = url.to_s.gsub("http://dejalearn.s3.amazonaws.com", "http://s3.amazonaws.com/dejalearn" )
 		return url
 	end
 end

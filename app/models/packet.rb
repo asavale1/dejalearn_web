@@ -15,7 +15,8 @@ class Packet < ActiveRecord::Base
 	has_many :images, dependent: :destroy
 
 	has_attached_file :xml,
-					  :path => "/packet/:attachment/:id_partition/:style/#{this.id}"
+					  :url => '/system/:access_token/foto_:style.:extension',
+					  :path => ':rails_root/public:url'
 	validates_attachment_content_type :xml, :content_type => ["text/xml", "application/xml"] 
 
 end

@@ -79,6 +79,7 @@ class PacketPagesController < ApplicationController
 
 		PacketPagesHelper.save_images(params, packet.id)		
 		packet.xml = PacketPagesHelper.create_xml(params, packet.id)
+		puts "\n\nPACKET XML\t#{packet.xml}\n\n"
 		packet.created_by = current_user.id
 		packet.save
 		

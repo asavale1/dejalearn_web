@@ -51,7 +51,7 @@ module PacketPagesHelper
 		
 		File.open("#{packet_id}.xml", "w"){ |f| f.write(xml) }
 
-		file = File.open("#{params[:title]}.xml")
+		file = File.open("#{packet_id}.xml")
 		return file
 		
 	end

@@ -61,7 +61,7 @@ class PacketPagesController < ApplicationController
 =end
 
 		puts "\n\n"
-		puts Packet.last.xml
+		#puts Packet.last.xml
 		puts "\n\n"
 
 		@index = 0

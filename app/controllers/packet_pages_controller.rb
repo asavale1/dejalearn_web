@@ -114,7 +114,14 @@ class PacketPagesController < ApplicationController
 
 		data = {}
 		query = params[:query]
-		packets = Packet.where("lower(title) LIKE ?", "%#{query.downcase}%")
+		new_packets_query = "new_packets_zzh00b418n9zrqyvipin"
+
+		packets = nil
+		if query =~ /#{new_packets_query}/
+			packets = Packet.order(:created_at)
+		else
+			packets = Packet.where("lower(title) LIKE ?", "%#{query.downcase}%")
+		end
 
 		packets.each_with_index do |packet, index|
 			data[index] = {

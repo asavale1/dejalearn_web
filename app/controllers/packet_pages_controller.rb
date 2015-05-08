@@ -117,10 +117,9 @@ class PacketPagesController < ApplicationController
 		new_packets_query = "new_packets_zzh00b418n9zrqyvipin"
 
 		packets = nil
-		puts query
+
 		if query =~ /#{new_packets_query}/
-			packets = Packet.order(:created_at)
-			puts "in newest"
+			packets = Packet.order(created_at: :desc).limit(10);
 		else
 			packets = Packet.where("lower(title) LIKE ?", "%#{query.downcase}%")
 		end

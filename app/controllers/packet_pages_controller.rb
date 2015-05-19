@@ -27,7 +27,6 @@ class PacketPagesController < ApplicationController
 
 		if verify_recaptcha == true
 			if user.save 
-				puts "\n\nUSER.SAVE FAILED\n"
 				sign_in(:user, user)
 				render :js => "window.location = '#{dashboard_create_path}'"
 			else
@@ -77,7 +76,7 @@ class PacketPagesController < ApplicationController
 		PacketPagesHelper.save_tags(params[:tags], packet)
 		packet.save
 
-		PacketPagesHelper.save_images(params, packet.id)		
+		#PacketPagesHelper.save_images(params, packet.id)		
 		packet.xml = PacketPagesHelper.create_xml(params, packet.id)
 		puts "\n\nPACKET XML\t#{packet.xml}\t#{packet.xml.path}\n\n"
 		packet.created_by = current_user.id

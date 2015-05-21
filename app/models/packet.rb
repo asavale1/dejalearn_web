@@ -9,7 +9,7 @@ class Packet < ActiveRecord::Base
 	has_many :downloads
 	has_many :users, :through => :downloads
 
-	has_many :tag_packets
+	has_many :tag_packets, dependent: :destroy
 	has_many :tags, :through => :tag_packets
 
 	#has_many :images, dependent: :destroy

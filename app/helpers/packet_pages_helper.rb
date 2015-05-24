@@ -86,20 +86,18 @@ module PacketPagesHelper
 	def self.save_tags(tag_string, packet)
 		tags = tag_string.split(',')
 		tags.each do |tag|
-			new_tag = Tag.new(:tag => tag.downcase.strip , :used => 1)
-			
-			if new_tag.save
-				new_tag.packets << packet
-				new_tag.save
-			else 
-				t = Tag.where(:tag => tag).first
+			t = Tag.where(:tag => tag.downcase.strip).first
+			if t.nil?
+				t = Tag.new(:tag => tag.downcase.strip , :used => 1)
+				t.save
+			else
+				t.used = t.used + 1
 				t.packets.each do |pack|
 					unless pack.id == packet.id
 						t.packets << packet
-						t.save
 					end
 				end
-				
+				t.save
 			end
 		end
 	end

@@ -89,6 +89,7 @@ module PacketPagesHelper
 			t = Tag.where(:tag => tag.downcase.strip).first
 			if t.nil?
 				t = Tag.new(:tag => tag.downcase.strip , :used => 1)
+				t.packets << packet
 				t.save
 			else
 				t.used = t.used + 1

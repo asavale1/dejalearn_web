@@ -1,5 +1,5 @@
 class Mailer < ActionMailer::Base
-  default from: "notify@dejalearn.com"
+  default from: "notify@zestconsulting.com"
 
   def notify_email(name, email)
   	@name = name
@@ -13,5 +13,7 @@ class Mailer < ActionMailer::Base
   	@message = message
   	mail(to: 'asavale1@yahoo.com', subject: "Contact about app")
   end
+
+
 
 end

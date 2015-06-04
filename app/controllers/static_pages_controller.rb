@@ -32,10 +32,5 @@ class StaticPagesController < ApplicationController
 
 	end
 
-	def receive_email
-
-		render :json => {}
-	end
-
 end
 

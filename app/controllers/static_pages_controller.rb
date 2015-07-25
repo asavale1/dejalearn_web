@@ -33,6 +33,8 @@ class StaticPagesController < ApplicationController
 		if !feedback.empty?
 			Mailer.feedback_email(feedback).deliver
 		end
+
+		render :json => { :sent => true}
 	end
 
 	def notify

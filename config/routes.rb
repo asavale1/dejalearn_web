@@ -4,6 +4,7 @@ Dejalearn::Application.routes.draw do
   match '/email', to: 'static_pages#email', via: 'post'
   match '/notify', to: 'static_pages#notify', via: 'get'
   match '/contact', to: 'static_pages#contact_email', via: 'post'
+  match '/feedback', to: 'static_pages#feedback_email', via: 'post'
   
   match '/dashboard', to: 'packet_pages#dashboard', via: 'get'
   match '/dashboard/create', to: 'packet_pages#create_packet', via: 'get'

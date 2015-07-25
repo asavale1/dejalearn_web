@@ -4,14 +4,19 @@ class Mailer < ActionMailer::Base
   def notify_email(name, email)
   	@name = name
   	@email = email
-  	mail(to: 'asavale1@yahoo.com', subject: 'Notify about app')
+  	mail(to: 'ameyasavale@gmail.com', subject: 'Notify about app')
   end
 
   def contact_email(name, email, message)
   	@name = name
   	@email = email
   	@message = message
-  	mail(to: 'asavale1@yahoo.com', subject: "Contact about app")
+  	mail(to: 'ameyasavale@gmail.com', subject: "Contact about app")
+  end
+
+  def feedback_email(feedback)
+    @feedback = feedback
+    mail(to: 'ameyasavale@gmail.com', subject: 'Dejalearn Feedback')
   end
 
 

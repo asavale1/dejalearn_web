@@ -2,8 +2,8 @@ class PacketPagesController < ApplicationController
 	include PacketPagesHelper
 
 	before_filter :verify_signed_in
-	skip_before_filter :verify_signed_in, :only => [:sign_in_dash, :log_in, :sign_up, :get_packet, :feedback_email]
-	skip_before_filter :verify_authenticity_token, :only => [:get_packet, :feedback_email]
+	skip_before_filter :verify_signed_in, :only => [:sign_in_dash, :log_in, :sign_up, :get_packet, :feedback_email, :packet_request_email]
+	skip_before_filter :verify_authenticity_token, :only => [:get_packet, :feedback_email, :packet_request_email]
 
 	def sign_in_dash
 		

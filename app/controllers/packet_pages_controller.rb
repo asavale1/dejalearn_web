@@ -2,8 +2,8 @@ class PacketPagesController < ApplicationController
 	include PacketPagesHelper
 
 	before_filter :verify_signed_in
-	skip_before_filter :verify_signed_in, :only => [:sign_in_dash, :log_in, :sign_up, :get_packet]
-	skip_before_filter :verify_authenticity_token, :only => :get_packet
+	skip_before_filter :verify_signed_in, :only => [:sign_in_dash, :log_in, :sign_up, :get_packet, :feedback_email]
+	skip_before_filter :verify_authenticity_token, :only => [:get_packet, :feedback_email]
 
 	def sign_in_dash
 		
@@ -138,6 +138,15 @@ class PacketPagesController < ApplicationController
 		puts "\n\n"
 		render :json => data.to_json
 	end	
+
+	def feedback_email
+		feedback = params[:feedback].strip
+		if !feedback.empty?
+			Mailer.feedback_email(feedback).deliver
+		end
+
+		render :json => { :sent => true}
+	end
 
 	private
 		def get_question_layout(type)

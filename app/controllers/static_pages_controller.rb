@@ -28,15 +28,6 @@ class StaticPagesController < ApplicationController
 		redirect_to "#{root_path}#4"
 	end
 
-	def feedback_email
-		feedback = params[:feedback].strip
-		if !feedback.empty?
-			Mailer.feedback_email(feedback).deliver
-		end
-
-		render :json => { :sent => true}
-	end
-
 	def notify
 
 	end

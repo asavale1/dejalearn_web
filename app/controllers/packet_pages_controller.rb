@@ -148,6 +148,15 @@ class PacketPagesController < ApplicationController
 		render :json => { :sent => true}
 	end
 
+	def packet_request_email
+		packets = params[:packets].strip
+		if !packets.empty?
+			Mailer.packet_request_email(packets).deliver
+		end
+
+		render :json => { :sent => true}
+	end
+
 	private
 		def get_question_layout(type)
 			question_render = nil

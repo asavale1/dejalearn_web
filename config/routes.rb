@@ -15,6 +15,7 @@ Dejalearn::Application.routes.draw do
   match '/dashboard/sign_up', to: 'packet_pages#sign_up', via: 'post'
   match '/dashboard/log_in', to: 'packet_pages#log_in', via: "post"
   match '/dashboard/feedback', to: 'packet_pages#feedback_email', via: 'post'
+  match '/dashboard/packet_request', to: 'packet_pages#packet_request_email', via: 'post'
   
 
   #get 'static_pages/home'

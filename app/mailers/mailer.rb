@@ -19,6 +19,11 @@ class Mailer < ActionMailer::Base
     mail(to: 'ameyasavale@gmail.com', subject: 'Dejalearn Feedback')
   end
 
+  def packet_request_email(packets)
+    @packets = packets
+    mail(to: 'ameyasavale@gmail.com', subject: 'Dejalearn Packet Request')
+  end
+
 
 
 end
